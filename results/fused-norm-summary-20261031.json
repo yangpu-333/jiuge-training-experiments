@@ -1,0 +1,755 @@
+{
+  "candidate": "fused-split-v1",
+  "baseline": "reductions-full-v1",
+  "original_gate_sha256": "a49da90bbcfe5cc67bbe97047f3b0008c09e7fcf8261174e90803f7612371fce",
+  "numerical": {
+    "lora": {
+      "passed": true,
+      "gradient_relative_l2": {
+        "1": 0.0,
+        "10": 0.0
+      },
+      "update_relative_l2": 0.0,
+      "final_model_relative_l2": 0.0,
+      "current_triton_content_hash_parity": true
+    },
+    "cpt": {
+      "passed": true,
+      "gradient_relative_l2": {
+        "1": 4.939330235896635e-07,
+        "10": 2.8413032257228383e-07
+      },
+      "update_relative_l2": 3.322654173133817e-06,
+      "final_model_relative_l2": 0.0,
+      "current_triton_content_hash_parity": true
+    }
+  },
+  "operator_paths": {
+    "current-lora": {
+      "kernel_count": 7,
+      "kernels": {
+        "void at::native::elementwise_kernel<512, 4, at::native::gpu_kernel_impl<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&, bool)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&, bool)::{lambda(int)#1})": 1,
+        "forward_statistics": 1,
+        "given_r": 1,
+        "backward_row": 1,
+        "split_dx": 1,
+        "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)": 1,
+        "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<c10::BFloat16>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<c10::BFloat16>, std::array<char*, 3ul>)": 1
+      },
+      "trace": "/private/yp/jiuge-training/checks/20261031-fused-norm/operator-current-lora.json"
+    },
+    "current-cpt": {
+      "kernel_count": 10,
+      "kernels": {
+        "void at::native::elementwise_kernel<512, 4, at::native::gpu_kernel_impl<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&, bool)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&, bool)::{lambda(int)#1})": 1,
+        "forward_statistics": 1,
+        "given_r": 1,
+        "backward_row": 1,
+        "split_dx": 1,
+        "_weight_products": 1,
+        "_backward_weight_partial": 1,
+        "_backward_weight_reduce": 1,
+        "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)": 1,
+        "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<c10::BFloat16>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<c10::BFloat16>, std::array<char*, 3ul>)": 1
+      },
+      "trace": "/private/yp/jiuge-training/checks/20261031-fused-norm/operator-current-cpt.json"
+    },
+    "fused-lora": {
+      "kernel_count": 5,
+      "kernels": {
+        "void at::native::elementwise_kernel<512, 4, at::native::gpu_kernel_impl<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&, bool)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&, bool)::{lambda(int)#1})": 1,
+        "fused_statistics_output": 1,
+        "fused_row_dual_dx": 1,
+        "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)": 1,
+        "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<c10::BFloat16>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<c10::BFloat16>, std::array<char*, 3ul>)": 1
+      },
+      "trace": "/private/yp/jiuge-training/checks/20261031-fused-norm/operator-fused-lora.json"
+    },
+    "fused-cpt": {
+      "kernel_count": 8,
+      "kernels": {
+        "void at::native::elementwise_kernel<512, 4, at::native::gpu_kernel_impl<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&, bool)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&, bool)::{lambda(int)#1})": 1,
+        "fused_statistics_output": 1,
+        "fused_row_dual_dx": 1,
+        "_weight_products": 1,
+        "_backward_weight_partial": 1,
+        "_backward_weight_reduce": 1,
+        "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)": 1,
+        "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<c10::BFloat16>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<c10::BFloat16>, std::array<char*, 3ul>)": 1
+      },
+      "trace": "/private/yp/jiuge-training/checks/20261031-fused-norm/operator-fused-cpt.json"
+    }
+  },
+  "paired": {
+    "lora": {
+      "pairs": [
+        {
+          "pair": 1,
+          "order": [
+            "current",
+            "fused"
+          ],
+          "arms": {
+            "current": {
+              "mean_seconds": 5.858848826400935,
+              "step_seconds": [
+                5.932692680507898,
+                5.9043302265927196,
+                5.912121620960534,
+                5.897463645786047,
+                5.863092335872352,
+                5.833171331323683,
+                5.812935404479504,
+                5.8505958542227745,
+                5.788705010898411,
+                5.793380153365433
+              ],
+              "tokens_per_second": 1398.226894519876,
+              "peak_allocated_GiB": 5.952489852905273,
+              "norm_forward_host_ms_rank0": 220.65385319292545,
+              "process_cpu_seconds_rank0": 6.105135085300001,
+              "forward_backward_host_seconds_rank0": 5.848288428410887,
+              "run": "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-current-v1"
+            },
+            "fused": {
+              "mean_seconds": 5.725773187913001,
+              "step_seconds": [
+                5.720253495499492,
+                5.712497546337545,
+                5.699973858892918,
+                5.7116811433807015,
+                5.744450197555125,
+                5.744436893612146,
+                5.733161801472306,
+                5.762069032527506,
+                5.720797824673355,
+                5.708410085178912
+              ],
+              "tokens_per_second": 1430.7238046545674,
+              "peak_allocated_GiB": 5.952489852905273,
+              "norm_forward_host_ms_rank0": 167.3637884669006,
+              "process_cpu_seconds_rank0": 5.954567785000004,
+              "forward_backward_host_seconds_rank0": 5.7151026029139755,
+              "run": "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-fused-v1"
+            }
+          },
+          "speedup": 1.0232415141362663,
+          "saved_ms": 133.07563848793436,
+          "training_scalars_equal": true
+        },
+        {
+          "pair": 2,
+          "order": [
+            "fused",
+            "current"
+          ],
+          "arms": {
+            "current": {
+              "mean_seconds": 5.835845576878637,
+              "step_seconds": [
+                5.803037422709167,
+                5.837276474572718,
+                5.809380302205682,
+                5.879113635979593,
+                5.855704642832279,
+                5.852671452797949,
+                5.82743570394814,
+                5.805345494300127,
+                5.842710560187697,
+                5.845780079253018
+              ],
+              "tokens_per_second": 1403.7383087133667,
+              "peak_allocated_GiB": 5.952489852905273,
+              "norm_forward_host_ms_rank0": 219.72676487639546,
+              "process_cpu_seconds_rank0": 6.072781261099999,
+              "forward_backward_host_seconds_rank0": 5.825240288395435,
+              "run": "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-current-v1"
+            },
+            "fused": {
+              "mean_seconds": 5.716236596554518,
+              "step_seconds": [
+                5.734865414910018,
+                5.706191315315664,
+                5.709748338907957,
+                5.708006783388555,
+                5.699069867841899,
+                5.69324544351548,
+                5.680594812147319,
+                5.692459844052792,
+                5.763822051696479,
+                5.774362093769014
+              ],
+              "tokens_per_second": 1433.1107296954358,
+              "peak_allocated_GiB": 5.952489852905273,
+              "norm_forward_host_ms_rank0": 170.41157446801662,
+              "process_cpu_seconds_rank0": 5.9348137745999985,
+              "forward_backward_host_seconds_rank0": 5.705744005925953,
+              "run": "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-fused-v1"
+            }
+          },
+          "speedup": 1.0209244278650422,
+          "saved_ms": 119.60898032411916,
+          "training_scalars_equal": true
+        },
+        {
+          "pair": 3,
+          "order": [
+            "current",
+            "fused"
+          ],
+          "arms": {
+            "current": {
+              "mean_seconds": 5.875960384029895,
+              "step_seconds": [
+                5.934035757556558,
+                5.884608048014343,
+                5.9350112387910485,
+                5.875713772140443,
+                5.872129977680743,
+                5.87339788954705,
+                5.853426307439804,
+                5.819902127608657,
+                5.8479078728705645,
+                5.86347084864974
+              ],
+              "tokens_per_second": 1394.1550767198505,
+              "peak_allocated_GiB": 5.952489852905273,
+              "norm_forward_host_ms_rank0": 219.63510429486632,
+              "process_cpu_seconds_rank0": 6.113923632899999,
+              "forward_backward_host_seconds_rank0": 5.865260625910014,
+              "run": "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-current-v1"
+            },
+            "fused": {
+              "mean_seconds": 5.701160545554012,
+              "step_seconds": [
+                5.739311672747135,
+                5.74957531504333,
+                5.727410865947604,
+                5.736912350170314,
+                5.674628243781626,
+                5.663723495788872,
+                5.714335727505386,
+                5.675563091412187,
+                5.668928110972047,
+                5.661216582171619
+              ],
+              "tokens_per_second": 1436.900423088145,
+              "peak_allocated_GiB": 5.952489852905273,
+              "norm_forward_host_ms_rank0": 168.9040131866932,
+              "process_cpu_seconds_rank0": 5.936761263999999,
+              "forward_backward_host_seconds_rank0": 5.6905941317789255,
+              "run": "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-fused-v1"
+            }
+          },
+          "speedup": 1.030660395735075,
+          "saved_ms": 174.79983847588267,
+          "training_scalars_equal": true
+        },
+        {
+          "pair": 4,
+          "order": [
+            "fused",
+            "current"
+          ],
+          "arms": {
+            "current": {
+              "mean_seconds": 5.879687401559204,
+              "step_seconds": [
+                5.88089463673532,
+                5.953971927985549,
+                5.93042385391891,
+                5.9024742459878325,
+                5.870306543074548,
+                5.860028672963381,
+                5.858453146182001,
+                5.850056426599622,
+                5.844708628952503,
+                5.845555933192372
+              ],
+              "tokens_per_second": 1393.2713493965011,
+              "peak_allocated_GiB": 5.952489852905273,
+              "norm_forward_host_ms_rank0": 216.8659621849656,
+              "process_cpu_seconds_rank0": 6.108692357800003,
+              "forward_backward_host_seconds_rank0": 5.86929268874228,
+              "run": "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-current-v1"
+            },
+            "fused": {
+              "mean_seconds": 5.666740980837494,
+              "step_seconds": [
+                5.653422882780433,
+                5.671470279805362,
+                5.680393754504621,
+                5.670019501820207,
+                5.663378794677556,
+                5.662375038489699,
+                5.661069525405765,
+                5.678263797424734,
+                5.664343859069049,
+                5.662672374397516
+              ],
+              "tokens_per_second": 1445.6281004728921,
+              "peak_allocated_GiB": 5.952489852905273,
+              "norm_forward_host_ms_rank0": 172.23337031900883,
+              "process_cpu_seconds_rank0": 5.8944459508,
+              "forward_backward_host_seconds_rank0": 5.656353761721403,
+              "run": "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-fused-v1"
+            }
+          },
+          "speedup": 1.037578287315726,
+          "saved_ms": 212.94642072171044,
+          "training_scalars_equal": true
+        }
+      ],
+      "mean_seconds": {
+        "current": 5.862585547217168,
+        "fused": 5.702477827714756
+      },
+      "speedup_ratio_of_means": 1.0280768683964483,
+      "faster_pairs": 4,
+      "pair_speedup_range": [
+        1.0209244278650422,
+        1.037578287315726
+      ],
+      "norm_forward_host_ms_rank0": {
+        "current": 219.2204211372882,
+        "fused": 169.7281866101548
+      },
+      "peak_allocated_GiB": {
+        "current": 5.952489852905273,
+        "fused": 5.952489852905273
+      }
+    },
+    "cpt": {
+      "pairs": [
+        {
+          "pair": 1,
+          "order": [
+            "current",
+            "fused"
+          ],
+          "arms": {
+            "current": {
+              "mean_seconds": 5.066439767926932,
+              "step_seconds": [
+                5.037555986084044,
+                5.060520023107529,
+                5.059017032384872,
+                5.063299824483693,
+                5.0884460443630815,
+                5.09443228226155,
+                5.0867781015113,
+                5.087281023152173,
+                5.022152923047543,
+                5.064914438873529
+              ],
+              "tokens_per_second": 1616.9145149734948,
+              "peak_allocated_GiB": 22.017884254455566,
+              "norm_forward_host_ms_rank0": 239.64979080483317,
+              "process_cpu_seconds_rank0": 5.259932915400002,
+              "forward_backward_host_seconds_rank0": 4.965074892155826,
+              "run": "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-current-v1"
+            },
+            "fused": {
+              "mean_seconds": 4.97709846496582,
+              "step_seconds": [
+                4.974753998219967,
+                4.974517093040049,
+                4.982716487720609,
+                4.9806226240471005,
+                4.985523479059339,
+                4.982957330532372,
+                4.982959037646651,
+                4.972294736653566,
+                4.97201662696898,
+                4.96262323576957
+              ],
+              "tokens_per_second": 1645.9389055016932,
+              "peak_allocated_GiB": 22.017884254455566,
+              "norm_forward_host_ms_rank0": 196.05433214455843,
+              "process_cpu_seconds_rank0": 5.172155237300001,
+              "forward_backward_host_seconds_rank0": 4.875027614086866,
+              "run": "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-fused-v1"
+            }
+          },
+          "speedup": 1.0179504792983285,
+          "saved_ms": 89.34130296111142,
+          "training_scalars_equal": true
+        },
+        {
+          "pair": 2,
+          "order": [
+            "fused",
+            "current"
+          ],
+          "arms": {
+            "current": {
+              "mean_seconds": 5.040424174629152,
+              "step_seconds": [
+                5.052692020311952,
+                5.049483433365822,
+                5.045301948674023,
+                5.03684538602829,
+                5.039003789424896,
+                5.045903265476227,
+                5.039956456050277,
+                5.0454379776492715,
+                5.028006304055452,
+                5.021611165255308
+              ],
+              "tokens_per_second": 1625.2600408581138,
+              "peak_allocated_GiB": 22.017884254455566,
+              "norm_forward_host_ms_rank0": 248.9480473101139,
+              "process_cpu_seconds_rank0": 5.2357388155999995,
+              "forward_backward_host_seconds_rank0": 4.9391073925420645,
+              "run": "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-current-v1"
+            },
+            "fused": {
+              "mean_seconds": 4.904271979536861,
+              "step_seconds": [
+                4.940844860859215,
+                4.931222829967737,
+                4.89702532812953,
+                4.896768709644675,
+                4.905526391230524,
+                4.9088627733290195,
+                4.902234660461545,
+                4.895469724200666,
+                4.8768683187663555,
+                4.887896198779345
+              ],
+              "tokens_per_second": 1670.3804426388315,
+              "peak_allocated_GiB": 22.017884254455566,
+              "norm_forward_host_ms_rank0": 195.03434402868152,
+              "process_cpu_seconds_rank0": 5.094138077199999,
+              "forward_backward_host_seconds_rank0": 4.802914189174771,
+              "run": "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-fused-v1"
+            }
+          },
+          "speedup": 1.027761958484437,
+          "saved_ms": 136.1521950922908,
+          "training_scalars_equal": true
+        },
+        {
+          "pair": 3,
+          "order": [
+            "current",
+            "fused"
+          ],
+          "arms": {
+            "current": {
+              "mean_seconds": 5.065527880191803,
+              "step_seconds": [
+                5.0570870488882065,
+                5.07424814812839,
+                5.071726863272488,
+                5.088829169049859,
+                5.077943632379174,
+                5.074129091575742,
+                5.054077132605016,
+                5.077482567168772,
+                5.038593421690166,
+                5.041161727160215
+              ],
+              "tokens_per_second": 1617.2055891813222,
+              "peak_allocated_GiB": 22.017884254455566,
+              "norm_forward_host_ms_rank0": 242.28180665522814,
+              "process_cpu_seconds_rank0": 5.263817971200003,
+              "forward_backward_host_seconds_rank0": 4.964094791095704,
+              "run": "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-current-v1"
+            },
+            "fused": {
+              "mean_seconds": 4.914295018557459,
+              "step_seconds": [
+                4.916005337610841,
+                4.932821407914162,
+                4.9271506275981665,
+                4.93458734638989,
+                4.938757103867829,
+                4.90454613417387,
+                4.907533661462367,
+                4.903896331787109,
+                4.89459466189146,
+                4.883057572878897
+              ],
+              "tokens_per_second": 1666.9735880864307,
+              "peak_allocated_GiB": 22.017884254455566,
+              "norm_forward_host_ms_rank0": 195.12824099510908,
+              "process_cpu_seconds_rank0": 5.105172543299998,
+              "forward_backward_host_seconds_rank0": 4.8126688410528,
+              "run": "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-fused-v1"
+            }
+          },
+          "speedup": 1.0307740705560524,
+          "saved_ms": 151.23286163434457,
+          "training_scalars_equal": true
+        },
+        {
+          "pair": 4,
+          "order": [
+            "fused",
+            "current"
+          ],
+          "arms": {
+            "current": {
+              "mean_seconds": 5.043301320355385,
+              "step_seconds": [
+                5.0504380613565445,
+                5.061860611662269,
+                5.071473563089967,
+                5.062381900846958,
+                5.032672963105142,
+                5.016639395616949,
+                5.060008184984326,
+                5.057166416198015,
+                5.018490233458579,
+                5.0018818732351065
+              ],
+              "tokens_per_second": 1624.3328485918696,
+              "peak_allocated_GiB": 22.017884254455566,
+              "norm_forward_host_ms_rank0": 239.71465015783906,
+              "process_cpu_seconds_rank0": 5.2379636650000005,
+              "forward_backward_host_seconds_rank0": 4.941738883499056,
+              "run": "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-current-v1"
+            },
+            "fused": {
+              "mean_seconds": 4.904853217862547,
+              "step_seconds": [
+                4.910460948012769,
+                4.914545942097902,
+                4.902939528226852,
+                4.909153632819653,
+                4.911490843631327,
+                4.915150811895728,
+                4.919859291985631,
+                4.901079866103828,
+                4.8792448323220015,
+                4.884606481529772
+              ],
+              "tokens_per_second": 1670.1824980544345,
+              "peak_allocated_GiB": 22.017884254455566,
+              "norm_forward_host_ms_rank0": 190.014523640275,
+              "process_cpu_seconds_rank0": 5.091777453299999,
+              "forward_backward_host_seconds_rank0": 4.803400393389166,
+              "run": "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-fused-v1"
+            }
+          },
+          "speedup": 1.0282267575283675,
+          "saved_ms": 138.44810249283856,
+          "training_scalars_equal": true
+        }
+      ],
+      "mean_seconds": {
+        "current": 5.053923285775818,
+        "fused": 4.925129670230672
+      },
+      "speedup_ratio_of_means": 1.026150299417216,
+      "faster_pairs": 4,
+      "pair_speedup_range": [
+        1.0179504792983285,
+        1.0307740705560524
+      ],
+      "norm_forward_host_ms_rank0": {
+        "current": 242.64857373200357,
+        "fused": 194.057860202156
+      },
+      "peak_allocated_GiB": {
+        "current": 22.017884254455566,
+        "fused": 22.017884254455566
+      }
+    }
+  },
+  "input_hashes": {
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-current-v1/performance-rank0.json": "eb26d98ccc82ea7ef5e44d51932524f40944114eb8ce5a9c3e09c5542c3ca4bb",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-current-v1/phase-rank0.json": "42820533f00d546067e628ad412fa11ea69899aaf3e843f0e0486c75b89d9086",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-current-v1/fusion-install-rank0.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-current-v1/performance-rank1.json": "355e4ba4b14500c96cbf3b754d04613d071168ad88d5453510ff7c113dfb6544",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-current-v1/phase-rank1.json": "448d2b764738ac70409a72d767e6fd5ffafe6c7feb6efa09e668835613dad6f9",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-current-v1/fusion-install-rank1.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-current-v1/performance-rank2.json": "c2142e909e4fa7a17ea53d338a9bdce9a14256b39c5ab3865e42952cc1a024d7",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-current-v1/phase-rank2.json": "02328d622faa2fed8831c95aaa9b5c0de48cb94ab6b97afb07a90e4d58a9f5a6",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-current-v1/fusion-install-rank2.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-current-v1/performance-rank3.json": "33297508427b4eb923ecdc98fc08aacbae26da27ecfe2d8a505049d977a7613e",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-current-v1/phase-rank3.json": "3b7814abedd3e5aa24d66ad4c21932425fce45b963338c21bc73f55f920673ac",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-current-v1/fusion-install-rank3.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-fused-v1/performance-rank0.json": "ce91aee1ef823f21bc6132105852f647ebd8f948dce5c55b9813d99f98eb15c2",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-fused-v1/phase-rank0.json": "2a176b433495063805cfb8be290445032e7e959431a2442344b41734293c47d7",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-fused-v1/fusion-install-rank0.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-fused-v1/performance-rank1.json": "9355d2bc43c0768b37380b55082f9c0884a85ce8290f364068d0e7b5bdbef408",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-fused-v1/phase-rank1.json": "d01919be98127b479f1bb7f9422d8256ad53b6cce130d9f24af297245cb3d5a4",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-fused-v1/fusion-install-rank1.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-fused-v1/performance-rank2.json": "606b19fd1f7b6b279d6a492b620aac556f1eb2f47a0a082629e6e45d0611eea4",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-fused-v1/phase-rank2.json": "640716b292d157c1a541fb1e1e68faa12ec1f20fc0e394f566f36400c9bb3844",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-fused-v1/fusion-install-rank2.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-fused-v1/performance-rank3.json": "5f19e27e7c305ac0e14b6abcabff6f4df2d7fbcc1a90818d51d3b61b7ece61b5",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-fused-v1/phase-rank3.json": "0f9f1255a9db9d573ce917b8adda38f2181fb5cde65c1108eddedb5f9fdc345b",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair1-fused-v1/fusion-install-rank3.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-current-v1/performance-rank0.json": "e0f1bd315c42254c261600fea850a9690a0aa6684a4f97876d74c87e4315b8d2",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-current-v1/phase-rank0.json": "3111939367b1f7a66aca611fc1567bc03ba681feb438e117410bf70fd0aed6ed",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-current-v1/fusion-install-rank0.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-current-v1/performance-rank1.json": "d7ebc5772d7aaef615201200fbaf38fa1e7b0c2fd54e1dba22a94ee26bd65837",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-current-v1/phase-rank1.json": "a9dc1fd7ce174ed0f8afb8fc353b857e7343bbf3ce311cb91b009b160addeabe",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-current-v1/fusion-install-rank1.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-current-v1/performance-rank2.json": "d4a359b5b69f5b25b7962c820644f904ef117c075eb5ad7e0e1469c4f30cb3c0",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-current-v1/phase-rank2.json": "ed9a0b838059b5172037976330f474e364dddd83d44bfdd87bc1f9142a0cb086",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-current-v1/fusion-install-rank2.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-current-v1/performance-rank3.json": "d2c0ee859d3548a14a901ad200c7b361f062700f1ebfa80fefd1a129731028d3",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-current-v1/phase-rank3.json": "a1945a2cdd03020d791498167b2b6f2bac17e9fe5e4fe4b5af53cd5f8e5adaa3",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-current-v1/fusion-install-rank3.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-fused-v1/performance-rank0.json": "75087a93d532a76bdab9e4b01ac3b772d6c237e50177dec2d120fce0fd7bbd47",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-fused-v1/phase-rank0.json": "188eb027d164a41cd256b5fdbdeb8bac507a2624522f0a5ffb89fbbe3838ea6a",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-fused-v1/fusion-install-rank0.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-fused-v1/performance-rank1.json": "ea4fdd2100d3b84e4d326949c9e9d3cdf8907e5903cc1b87d16dcf537fb599fa",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-fused-v1/phase-rank1.json": "e9c9e7abc01782c578ccfec63955a9dc7dde9c1473a7d2679d82faabca21b9c9",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-fused-v1/fusion-install-rank1.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-fused-v1/performance-rank2.json": "1c19eff4bfe0400685c585fb1e235b3e28854d18a4fd29f7018238aa25121767",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-fused-v1/phase-rank2.json": "f6c13c2a9875018ff7907fbd1701205b0625d7f6fb596624f704b8ec97dd8e9d",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-fused-v1/fusion-install-rank2.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-fused-v1/performance-rank3.json": "3a66be7629a4d80f6586c11858c7d28caa0b86437ecacb7b470afd516001c428",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-fused-v1/phase-rank3.json": "1a168d7f27e480c5581d00b0914ec653eb12a9ca820cbaf4af14e6ba08b7b3e9",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair2-fused-v1/fusion-install-rank3.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-current-v1/performance-rank0.json": "b1ed244165b5b60d8f0e3c702b34bedfad3801fdd64b28bd068001ae692e9b72",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-current-v1/phase-rank0.json": "236af71cbed9fcf0a926e3c696ccca4473076d8da2dcd67121074c2019f49392",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-current-v1/fusion-install-rank0.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-current-v1/performance-rank1.json": "52bd05ffcd5c630e9fe43148ae916d8c901b4a04bbf8f7293fbb594e9d18f91b",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-current-v1/phase-rank1.json": "71224f14fe282d93c1c5575c603e74bca9f6325a749ae2852f3913da82e24a80",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-current-v1/fusion-install-rank1.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-current-v1/performance-rank2.json": "cdefc4a6bed43b0ed62c932001f667a6efb296ff3622195bd713b904b0bd019d",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-current-v1/phase-rank2.json": "e63121742545264f11fd916713dfdaf14ca3111b72e47fc8b22ac1f274367fcc",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-current-v1/fusion-install-rank2.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-current-v1/performance-rank3.json": "3b2b95cbedaaca7254fa0306703c2e66028b8df63fb4d1a6e7b268882b7a78e5",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-current-v1/phase-rank3.json": "820b6f019c15c95771960a7c4978d690925aeda9c59071a3111262f30f0f6d6e",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-current-v1/fusion-install-rank3.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-fused-v1/performance-rank0.json": "6cc60d53add66b8178231a80558607e7bd727fb0da6ad81a1b3e1dcfe6b0decb",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-fused-v1/phase-rank0.json": "e659547a134321a0fe8093fc270ebac977231fbb2abddf880847e874fc1e4fdf",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-fused-v1/fusion-install-rank0.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-fused-v1/performance-rank1.json": "45250d2a1d47ceff8dd3215a092d22f0613174b11674b0aa512683b8d892097b",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-fused-v1/phase-rank1.json": "c445081d64ffde6aca8a8956c323c75c8a417b1290aee0169728c759563961b1",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-fused-v1/fusion-install-rank1.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-fused-v1/performance-rank2.json": "9b289c1f639c6990106553082dcbaeacf2dea8a99c9cd0038d5877cc6ed969c4",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-fused-v1/phase-rank2.json": "3085bec8e62698c57e3684dd06a05141e2b94e716d7a8a8a67b9bb2c100f079e",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-fused-v1/fusion-install-rank2.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-fused-v1/performance-rank3.json": "ada2c0caadb4c8cc867f8ecf72abbd62bab8be8fccf14897b8ff68dc73b76c12",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-fused-v1/phase-rank3.json": "4d38b70c1f6676b435a3944199ded21d1ed647f182f5b974c8bca1476825f197",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair3-fused-v1/fusion-install-rank3.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-current-v1/performance-rank0.json": "949b6152aad23e1acc6a590c45f030b5ab3f4e2ca3e16f4f253e4f2d421fb00a",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-current-v1/phase-rank0.json": "4c231941e24d5a85bc846a4d6f664fcdfd97f6fbb537b4971a58d95cf67e740f",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-current-v1/fusion-install-rank0.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-current-v1/performance-rank1.json": "5c8e276482709d190340af7ef692a505173f5753e6acf3d32b461c52f97be993",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-current-v1/phase-rank1.json": "c768d3d7d27937a6cbca58893d1bc85fd903bed11d939fadd5fcc6f14c20be0f",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-current-v1/fusion-install-rank1.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-current-v1/performance-rank2.json": "93c1f21f5680f8a16a0eff1fa65ac6e4aa5160f640e6de45cb77979e3ff65950",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-current-v1/phase-rank2.json": "e689b5d06c924f2449fed85528143e00b6846495d1627e34446e222d65f6f594",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-current-v1/fusion-install-rank2.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-current-v1/performance-rank3.json": "b63f7f97cbd0d2fa13374253ca0ecfb3f4b09d00f1c32e60d5708b7a09bffe8b",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-current-v1/phase-rank3.json": "56911426fc04ef26aa62fb49847eab14ac17681cfbaf0e18d4503290e19b1e23",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-current-v1/fusion-install-rank3.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-fused-v1/performance-rank0.json": "b58f3f4a8974119aad27bdfe4297e8d2332ea2fcbea17f81a12d3732e08d7cbd",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-fused-v1/phase-rank0.json": "dd2cde96e2ade9f34325c2835cf30907092a7e0c84780a656c27754a6d206a2e",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-fused-v1/fusion-install-rank0.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-fused-v1/performance-rank1.json": "c65eb3c6602d0d121a17e3a26ce9248a70a95a40e2a82d4dc377824cfae0b346",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-fused-v1/phase-rank1.json": "a9f8d4f2777f02f52097cca8fcb533e95c69ddd7a00f7ea0835cf643517a3f7a",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-fused-v1/fusion-install-rank1.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-fused-v1/performance-rank2.json": "fb901e47df3ac90b08c9b9c432dc267f34cdb8fc4daedadded23c0bfd70f702f",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-fused-v1/phase-rank2.json": "12573753632562088230cfdd70295978449326a24ab0521f1ef3a66b214c80e6",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-fused-v1/fusion-install-rank2.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-fused-v1/performance-rank3.json": "6bb5d40ea843935c777af997ebb660a2565531ff919b5e9e66d3d0175289ab31",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-fused-v1/phase-rank3.json": "04113c184757f49bd4629d2cfba6056f1599e0e3403967a1ed45e4b33d1e65a0",
+    "/private/yp/jiuge-training/runs/4b-lora-tp2pp2-s512-fused-pair4-fused-v1/fusion-install-rank3.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-current-v1/performance-rank0.json": "8b4e5c18c9ebce8ba4c7e767e610cbbc3d557d3cec281718b1681dee4f5f7790",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-current-v1/phase-rank0.json": "6f023ce84f7b7d9aedf9f81f07069293c8ca6a4133151587ce1c90a96ad42120",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-current-v1/fusion-install-rank0.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-current-v1/performance-rank1.json": "84bdfc106ceda73ae2474e02babef8d01935cd80f1995b54817e548543321995",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-current-v1/phase-rank1.json": "c407fc68ed10b63bce9c2f3495a6427f51c4a5eef618153cad76400a0d6d35e7",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-current-v1/fusion-install-rank1.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-current-v1/performance-rank2.json": "41a9dadfcb4fb69fe375c0a64145321656c7e6f467dcace22ae9c6a7e59d32dc",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-current-v1/phase-rank2.json": "85d15ae57a6780dc13dbf835b6757dc995fb893dd7601de79c46b188c7c26d71",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-current-v1/fusion-install-rank2.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-current-v1/performance-rank3.json": "80038e4acb2971c35971dd443bcc0a6b4335be53c68ca85a6b24bec9c66341e1",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-current-v1/phase-rank3.json": "800dd1f9723d3f550d3d3a60af6795335fa9e04d1897c7d2a892e825debb40c6",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-current-v1/fusion-install-rank3.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-fused-v1/performance-rank0.json": "698fa6ed32c6701ec023117647e9b84b53a23af75d534beead4c83d5176c01b7",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-fused-v1/phase-rank0.json": "826127775c2a97d1533ce52e1b4551c48f2c6dab9718425a09787699c71b5c8e",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-fused-v1/fusion-install-rank0.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-fused-v1/performance-rank1.json": "d54bd0a8bea15bf925e3fbc47599c2d684689e2e838c79e166c6970db562faf0",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-fused-v1/phase-rank1.json": "94bc0953f96f57f416468d6b8e1479c9acb685013781c8fbc126eb9d5d6055ee",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-fused-v1/fusion-install-rank1.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-fused-v1/performance-rank2.json": "6996dbd4003fbf6492190a0bf1f005a995a637ecc44246d5cd7789118519c7b1",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-fused-v1/phase-rank2.json": "bb8f86760c74259264cfcd79c46e5c20d9a1472b82bc559e5defd2da885889a9",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-fused-v1/fusion-install-rank2.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-fused-v1/performance-rank3.json": "da3567949972255d9820e9c7488cceb6332f49853de31d5b0758979177b99dd8",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-fused-v1/phase-rank3.json": "237602fd4574b932199dbb929217302ef5781ea0cfd32aecfc93564f50cd233b",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair1-fused-v1/fusion-install-rank3.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-current-v1/performance-rank0.json": "21dbc1a34f86138c2622f1459422d8d513fa5a943254e8da700feba1434b5e3e",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-current-v1/phase-rank0.json": "faceb9f429877e0b92d2a2a807f1d013274697d8ce8df4e4dc6ebdd61d5dfd40",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-current-v1/fusion-install-rank0.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-current-v1/performance-rank1.json": "e924edbe11e88971cc356337f5e8ec02a78c5c97cbf1a6f6c998bcbcf1758f01",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-current-v1/phase-rank1.json": "c2a86f769961f5e55bfb2382cacdd688eb506eb1f8b90c838257a9fe8299ea2f",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-current-v1/fusion-install-rank1.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-current-v1/performance-rank2.json": "8b275f99b7f0a6bf2421d981ad2859bb823e927ef82532e246d52d8209acc1d6",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-current-v1/phase-rank2.json": "0c1b2978f8cba1ddb9226e839bc451d0f92fabcf35acf5091f3c67e102b54c29",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-current-v1/fusion-install-rank2.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-current-v1/performance-rank3.json": "e8f9eac683b1efa5eb487d2e97d69032205f5bc76ed9fec4cb84a405980778e3",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-current-v1/phase-rank3.json": "cef09f7d6ea6da0290efe42a95297f723ffe2f143bfb645390d3f6e46d810b86",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-current-v1/fusion-install-rank3.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-fused-v1/performance-rank0.json": "d37973a3ef5b0919f6e7bbdf1d771b413babd2efb80cbd9324cc9df5f2d668ae",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-fused-v1/phase-rank0.json": "70c02edd25349a45c205d6f2ae4ef1f629a59df2c72b7e2d7ecc19191e8837cb",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-fused-v1/fusion-install-rank0.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-fused-v1/performance-rank1.json": "06526e63eff81e1a73c7afca2c55b7ec95e1ae4b50ce1b11029a074261c349ea",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-fused-v1/phase-rank1.json": "75dfcf8470136f95a81e09526bc33c8996fa2389961be7536a59153d736d364b",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-fused-v1/fusion-install-rank1.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-fused-v1/performance-rank2.json": "46ae2ad326fdfa157973b00d746db272a684c5c3646e9411692cbc7f8bd06682",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-fused-v1/phase-rank2.json": "aa3496c10449956cbd58b89fd6fbbcbefb1318dd563d567bbfb506a46ed4c657",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-fused-v1/fusion-install-rank2.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-fused-v1/performance-rank3.json": "ae6af80d582afb5ecd96e30fc084c84de9924e4413836592ef118b17268ffcc6",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-fused-v1/phase-rank3.json": "d767e70c7f230deeb5419d15d54461a013887fcd433eda9bc000fca9f5553fd8",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair2-fused-v1/fusion-install-rank3.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-current-v1/performance-rank0.json": "bcf3b34df079ef17de1d72d6885b0fb2d4fdb618b03a446cb1df659166af93e8",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-current-v1/phase-rank0.json": "f0fddd4448f7add03c6192c6364da5633199e14ff810c9f858f3bf1f7621f020",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-current-v1/fusion-install-rank0.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-current-v1/performance-rank1.json": "af88aec17ac8fc449510809ec1ec96d78f188b94663f9236612bccfef90c71d0",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-current-v1/phase-rank1.json": "299867a61c590d16e731715ed568a30b1ffeea146e3c691dac2aad8b653079d8",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-current-v1/fusion-install-rank1.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-current-v1/performance-rank2.json": "79dfbacd4f1a7195522bd849cfe2f76562b907d34fa94194b66aecbf4ce36963",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-current-v1/phase-rank2.json": "ce2ca37871261b8bc37176b6d253b187100c5efd0b6b9c31b32030500213555e",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-current-v1/fusion-install-rank2.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-current-v1/performance-rank3.json": "3302e13273b9d1eebf51b27bbc07e3040efc8cda212edf870c68d96fcb24f0c3",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-current-v1/phase-rank3.json": "117174783f44f293faeae09663d7a3c1b8f9e9a290686d4821f02a8b6a449237",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-current-v1/fusion-install-rank3.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-fused-v1/performance-rank0.json": "3fcf831a23c33b31d70840c2eb7414da58d559f0d1372edaebee197f30f188d6",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-fused-v1/phase-rank0.json": "2656f617e84bbb16185f389644d313d70f1fed09b9f51e49ef4ffb5294bab540",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-fused-v1/fusion-install-rank0.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-fused-v1/performance-rank1.json": "e1bc55c60866af9151774351ce1b963b9ebb3bb8e1e8076ca43d86e4c314e799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-fused-v1/phase-rank1.json": "96f724fc92caaf5ea3b81687c3f9e505e639bbf223196cab13b4632b80ebfaa4",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-fused-v1/fusion-install-rank1.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-fused-v1/performance-rank2.json": "91019f4eaf424e02123b7a1eafd67d097053e36a61f87593bf87455eb54f15eb",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-fused-v1/phase-rank2.json": "4bc22bc4b21a296804049fc5abd5c788e70f243424b1911be04ff897f136b0a5",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-fused-v1/fusion-install-rank2.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-fused-v1/performance-rank3.json": "591b1a53da8f467f9971fadaddaa1eb08b5f1cfdf2d530b9c7a6b96f817b0c3c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-fused-v1/phase-rank3.json": "c35beef2b16bbc8374eef02e4a8487902357dcf0de889256a1313b55aab3a6d4",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair3-fused-v1/fusion-install-rank3.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-current-v1/performance-rank0.json": "c98e4fd33f19615111015a27a042712f946abe42bf79912758d84a3b8d8f3d4b",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-current-v1/phase-rank0.json": "3417407f746c306b7170d9375367fbcbd11d1912a1262cc7802f63bc84a43458",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-current-v1/fusion-install-rank0.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-current-v1/performance-rank1.json": "deca56c886c6ff477135dfd69bc5664d86e18a21718df02d8d31dfc83db6818e",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-current-v1/phase-rank1.json": "25a7e697445dffd980c7727fa81cff68f634ec6abff6da0092b2bc04a53c6fbf",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-current-v1/fusion-install-rank1.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-current-v1/performance-rank2.json": "0cdf0c35827b9c58246e3b5d682fba638b8979c6bed1651e870b95f3ce988125",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-current-v1/phase-rank2.json": "858e87c4ab7f6c9e493f074c21411b386d78fce4ef58965e4e0e5d63df990d33",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-current-v1/fusion-install-rank2.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-current-v1/performance-rank3.json": "9c225894ba91a11a908b22680cc5dc4f0c6b938ab31ae0c793f5c124d5f21f69",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-current-v1/phase-rank3.json": "49082c84da313536407f1c912f1ba83b44cb4a85b2659e0e9cfb9cf077112142",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-current-v1/fusion-install-rank3.json": "63a745c292b3c548d8023f205a46237fff541fb6379b0e335059e525ef767d5c",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-fused-v1/performance-rank0.json": "2cb105ff8281e2ee7ea77ef5526de0dec5d844cbb10eed8f67595bdf0f77afc0",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-fused-v1/phase-rank0.json": "ffa0c4287ccc77c31718d7d1143a289732b52d76b58043d2c6e04197fbd41e0d",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-fused-v1/fusion-install-rank0.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-fused-v1/performance-rank1.json": "f41759db7165011b992a2eba722dd1dd99c9f1822b89977deae491238af44345",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-fused-v1/phase-rank1.json": "8078f09bc2d382deed2b9d45901028172d93aed5d60d6db48de929be061a1b5f",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-fused-v1/fusion-install-rank1.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-fused-v1/performance-rank2.json": "c2d951eec33e83d3d38db8430f9c589f50f7c48ff54d4e4106f1f691eee7dfc1",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-fused-v1/phase-rank2.json": "5ba1ae24095b305bd067ed0051a104081fff3774c28e8b5ab8fd21898e28aea1",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-fused-v1/fusion-install-rank2.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-fused-v1/performance-rank3.json": "22dff4ba5e5a3f3063e06b4a1c0737f557e437e8bca39d7abe0dc9eefac98685",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-fused-v1/phase-rank3.json": "6f8874134743bee006f2454983162e89f77a62b383717b5651a91fe735ce5cda",
+    "/private/yp/jiuge-training/runs/4b-cpt-tp2pp2-s512-fused-pair4-fused-v1/fusion-install-rank3.json": "0d0e5be2238fc52b3b7bcf0bff1c4964bcabdf38eda1b3d9db9abde6604b7799"
+  }
+}
