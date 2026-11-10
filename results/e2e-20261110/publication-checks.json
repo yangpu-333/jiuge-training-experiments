@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-10",
+  "evidence_offline_recalculation": "passed;842SHA/3600ranksteps/3600scalarpairs/144CRC/27exits/20000bootstrap",
+  "upstream_source_match": "all13 measured Python/requirements files match public pinned commit",
+  "controller_adaptation_check": "all functions except calendar-guard removal in run structurally unchanged; original source snapshots preserved",
+  "native_source_dependencies": "C++/CoreX and Triton imports present; top-level active module closure checked",
+  "markdown_links": "117 local links, zero missing targets",
+  "credentials": "scanned all publication files and843 archive members; no token/password/private-key patterns",
+  "fresh_gpu_rerun_for_publication": false,
+  "weights_and_checkpoints_uploaded": false,
+  "note": "New install/controller validated locally without allocating GPUs; exact performance on a new machine requires the documented full campaign."
+}

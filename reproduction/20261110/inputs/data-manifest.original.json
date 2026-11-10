@@ -1,0 +1,34 @@
+{
+  "source": "/private/yp/jiuge-training/data/raw/alpaca_gpt4_data_zh.json",
+  "source_sha256": "6fcb98c6d79691d1f9a88ef513335da9124e7fdeef5103343f5d9f9a6e8f4903",
+  "tokenizer_files_sha256": {
+    "config.json": "358875d8033e2d63b5d90048c4a61d0238d2e7d68624d00f963725611359d0a5",
+    "special_tokens_map.json": "068594063e37662c02b21acf42ebb334ef6a74fb810e68a2368f88f08351de76",
+    "tokenizer.json": "b00802b71a613e3f7df3899fe9643a3ff949736d333a2b892448a974383fe372",
+    "tokenizer.model": "bb74d51116831c3bf65db812c553f94ab0c88dcf97a5bbb37e3504f6d359c530",
+    "tokenizer_config.json": "6c3ade136685371da33fe93e701af106ff395cc457a4c9f4d01122bf4eb08dc6"
+  },
+  "transformers_version": "4.57.6",
+  "model_path": "/private/yp/jiuge-training/models/9G4B-resolved",
+  "task": "cpt",
+  "seq_length": 512,
+  "seed": 1234,
+  "validation_fraction": 0.02,
+  "source_records": 48818,
+  "splits": {
+    "train": {
+      "records": 47842,
+      "samples": 15995,
+      "loss_tokens": 8189053,
+      "sha256": "b38ce735ccd2d6d2f0672d5546d61a55759643aadcce670014b3359d990eba07"
+    },
+    "validation": {
+      "records": 976,
+      "samples": 338,
+      "loss_tokens": 172696,
+      "sha256": "19265e6b07cc9120cc40909eec3f53ea81829fefbdaf21cdfca85715f0ba6052"
+    }
+  },
+  "format": "instruction/input/response headings; EOS between CPT records; response+EOS only for LoRA",
+  "purpose": "Alpaca is a pipeline reproduction corpus, not evidence of domain CPT quality."
+}

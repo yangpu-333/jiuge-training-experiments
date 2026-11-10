@@ -1,0 +1,22 @@
+{
+  "created_at_utc": "2026-11-09T17:00:55.538388+00:00",
+  "source_files_sha256": {
+    "src/jiuge_ops/__init__.py": "d1bb8f1089257a7e8570774862675529e43decd92593c58d4714cc870a2179b0",
+    "src/jiuge_ops/_triton.py": "d1f32bd0a720279f860d1c3523787f83b029f6d3236e24650677bb2382e2c236",
+    "src/jiuge_ops/rms_norm.py": "77ead7b28a37b24aba6c2a359ef5fe3cbca55459f95720fabd96c1cb791a6651",
+    "src/jiuge_training/__init__.py": "5ae1092e37d222f6c35129867107e546ac82bf8d894964deb0ed4924cdcc6dbf",
+    "src/jiuge_training/cli.py": "07f3db2305c2d2a05205a5b875fd28a14890767ba8125cd353af2d8988ddb7d1",
+    "src/jiuge_training/config.py": "945c40108cff581c32d6004f1a13dbe3563a4fe9da31f29d77c484308ba4d6de",
+    "src/jiuge_training/data.py": "0f4370bad49369d814d1b7809fe51b30a6f6c5bf75454b74f53b042936036ed3",
+    "src/jiuge_training/legacy.py": "c38fe03038bfca4d1404cf504216e6978065aface1d41e0d77d447ba655ade9a",
+    "src/jiuge_training/lora.py": "71a92c7f761583c3c2931a3ad70f58cb7af76c3788451b999a560b5a5ae84712",
+    "src/jiuge_training/model.py": "bf354c1decbfc03ce18f35c8c1f44ec30fc9398f11d61ad4f8deeb0405310134",
+    "src/jiuge_training/train.py": "22b81557b3530bf2cadbf9ea4c4c4fdad58eb8970bf6f7aa568cc2f90bf7b6d7",
+    "src/jiuge_training/weights.py": "79304a6c57ce2959c33812c7f091a65dae7ae952873ecd22db1f91e2c2003eec",
+    "requirements-bootstrap.txt": "eb839c3b78afaddc83962ddccda5cd628984f0f2da8db2dc2230f481dac6ff69"
+  },
+  "effective_config_sha256": "d4fcdfc143625df2658e227ce2208aad0fd961301ed2f811c109aa6f27bc6b79",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "environment_lock_sha256": "7afca44359a9ae469ef0922833876db19b4ed3ad31cbe5f7a7882450741236dd",
+  "data_manifest_sha256": "4905b14c5ade48f26f48a7a9aa81644b058bfe4da222d0dea57bd76913ce47f7"
+}

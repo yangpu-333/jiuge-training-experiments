@@ -1,0 +1,74 @@
+{
+  "baseline": {
+    "cpu_state_prepare_max_rank_mean_seconds": 40.609815443400294,
+    "logged_training_loop_mean_seconds": 268.5532,
+    "max_rank_sum_file_write_mean_seconds": 55.54479265244057,
+    "loops": [
+      270.1452,
+      267.059,
+      269.0337,
+      270.4784,
+      263.2975,
+      271.3054
+    ],
+    "prepare": [
+      38.34381588269025,
+      38.170828023925424,
+      46.590079778805375,
+      38.33019303996116,
+      38.67960744071752,
+      43.544368494302034
+    ]
+  },
+  "current": {
+    "cpu_state_prepare_max_rank_mean_seconds": 9.910783921989301,
+    "logged_training_loop_mean_seconds": 244.927,
+    "max_rank_sum_file_write_mean_seconds": 57.46137427305803,
+    "loops": [
+      245.1088,
+      243.76409999999998,
+      243.3552,
+      244.3171,
+      248.3671,
+      244.6497
+    ],
+    "prepare": [
+      9.823479970917106,
+      9.639320195652544,
+      9.539717083796859,
+      9.721970960497856,
+      11.146931464783847,
+      9.593283856287599
+    ]
+  },
+  "coalesced": {
+    "cpu_state_prepare_max_rank_mean_seconds": 4.019867626329263,
+    "logged_training_loop_mean_seconds": 244.74316666666667,
+    "max_rank_sum_file_write_mean_seconds": 56.173966778907925,
+    "loops": [
+      245.8306,
+      244.9655,
+      244.6059,
+      244.8377,
+      243.2063,
+      245.013
+    ],
+    "prepare": [
+      4.026681232266128,
+      4.132814743556082,
+      3.9328948380425572,
+      3.9654618203639984,
+      4.018378235399723,
+      4.042974888347089
+    ]
+  },
+  "deltas": {
+    "baseline_to_current_throughput_pct": 14.428149415408997,
+    "baseline_to_current_time_pct": 12.608916153166504,
+    "current_to_coalesced_saved_seconds": 5.927192433271557,
+    "baseline_to_coalesced_saved_seconds": 56.84946211117011,
+    "CPT_throughput_margin_percentage_points": 1.3826698793313916,
+    "CPT_time_margin_percentage_points": 2.0765544357397747
+  },
+  "limits": "Logged loop timer and max-rank preparation/write durations have different scopes; overlap and rank skew prevent treating their sums as an exact critical-path decomposition. No new trace or per-component ablation."
+}

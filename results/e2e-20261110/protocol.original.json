@@ -1,0 +1,73 @@
+{
+  "created_utc": "2026-11-09T14:35:27.159189+00:00",
+  "config": "4 BI-V150 4B BF16 DP1 TP2 PP2 S512 MBS1 GBS16 seed1234 recompute=false",
+  "arms": {
+    "baseline": "native MCore attention + nine-grid reference RMSNorm adapted-local, native optimizer assembly",
+    "current": "accepted fused RMSNorm dw + fast SwiGLU, direct DP1 optimizer assembly",
+    "coalesced": "same current training stack, bounded GPU chunk assembly"
+  },
+  "timing": "parent before CLI creation until all child ranks exit; loading/init, 50 train steps, autoGC, final full synchronous native-format model/optimizer/RNG/scheduler save, file fsync+directory fsync+atomic rename, shutdown included; no profiler; post-exit CRC/hash/full payload decode and restoration audits excluded",
+  "work": {
+    "steps": 50,
+    "samples": 800,
+    "processed_tokens": 409600
+  },
+  "orders": [
+    [
+      "baseline",
+      "current",
+      "coalesced"
+    ],
+    [
+      "baseline",
+      "coalesced",
+      "current"
+    ],
+    [
+      "current",
+      "baseline",
+      "coalesced"
+    ],
+    [
+      "current",
+      "coalesced",
+      "baseline"
+    ],
+    [
+      "coalesced",
+      "baseline",
+      "current"
+    ],
+    [
+      "coalesced",
+      "current",
+      "baseline"
+    ]
+  ],
+  "correctness_preflight": "for each arm fresh 11 steps: save10 only, native getter exact, CPU prewrite vs persisted optimizer bytes exact, whole ZIP CRC and SHA; native load10->11 full GPU state/scheduler/counters and actual input/RNG audit must equal in-memory11",
+  "persistence": "same fresh atomic-file/fsync wrapper all arms, original torch.save ZIP64 CRC retained; one NEW scratch slot recycled only after full verification; never touch old archive paths; final valid slot retained",
+  "capacity": "retain >=10GiB; budget full slot plus256MiB; user-approved exact archival of three old CRC-failed files prerequisite",
+  "performance_acceptance": "six cycles, original all50 loss/grad_norm tolerances; current/coalesced complete persisted state payload fingerprints exact; final cycle native50->51 input/RNG and full current/coalesced state exact; candidate incremental all6faster and mean>=1.005; CPT final target baseline/candidate>=1.15 and lower95 bound>=1.15, time<=0.88",
+  "stats": "20000 paired cycle bootstrap seed1234; retain every run including slow samples",
+  "deadline": "no new job after 2026-11-10 02:00 CST, each job timeout1200s; environment expires02:30",
+  "amendment": "v1 superseded before any GPU work; v2 additionally fsyncs latest-iteration tracker and contract before exit; same arms/work/numeric gates",
+  "files": {
+    "/private/yp/jiuge-training/tools/checkpoint_round_common_v2_20261109.py": "21d0003c66c4388bde89e1d95183b1de54c51abfbb7e9a18ade156db0b95343b",
+    "/private/yp/jiuge-training/tools/e2e_coalesced_v2_20261109.py": "16550cc1cdfcb0b50f59832dbec60cf637cc699a40e358f5815e5fdef86be12c",
+    "/private/yp/jiuge-training/tools/integrity_coalesced_v2_20261109.py": "5ba3d44abef22c4ce2d9ef3cf776dcd12e16946ae42a00b50ac8bcf1a9721ade",
+    "/private/yp/jiuge-training/tools/run_e2e_coalesced_v2_20261109.py": "087277541b6a50ce234ce61641cf74650f1e35841d3a2904ae25fcb06b1c006a",
+    "/private/yp/jiuge-training/tools/coalesced_state_20261109.py": "036007bc144c5d09209ad5d45d99632f96a39d8c8f798a4bd3bb671e4056c64c",
+    "/private/yp/jiuge-training/tools/dp1_checkpoint_pack_20261107.py": "a264714315c40019ee2843039e4ba3beca35ccc3326dbe14da8d516eef4bcd1f",
+    "/private/yp/jiuge-training/tools/e2e_training_20261106.py": "8f9e7666040b7e84020a424ca5919165242b8332bef15a47138423a96229665b",
+    "/private/yp/jiuge-training/tools/audit_training.py": "cfd74a120acc7d90b87c34459fe5d2634f698df1c42c028cea35979ed214cd68",
+    "/private/yp/jiuge-training/tools/savepack_resume_20261107.py": "7ebea958d5c6df9e0487617fdd64ffdc4e8a698e154cc64de0a8fa533a5a780f",
+    "/private/yp/jiuge-training/tools/checkpoint_diagnostic_20261107.py": "0ea29bd5cd29b320d72746a9c8080b03fae2415ced7cff62ee737288d57081ea",
+    "/private/yp/jiuge-training/tools/fused_norm_dw.py": "2b783ac14085ceb7d0f3f839c6b116d459854f132465167d6bedece651b56afc",
+    "/private/yp/jiuge-training/tools/swiglu_fast_patch_20261106.py": "4675c4116632fa38713cb5262380e8ff8ac942c0982686c5a532ea6c9c15109d",
+    "/private/yp/jiuge-training/tools/local_spec_ablation_patch.py": "040609ef77789bf0656f5a046cfe80db4ff03759ef92f82e07a943e8609f0be5",
+    "/private/yp/jiuge-training/tools/lora_linear_cpp.py": "df04e22f0a89a71159a48e2a87b9e59350b8da43ecfa1154e64deb475ffa7d2d",
+    "/private/yp/jiuge-training/tools/compact_legacy_archive_20261109.py": "a3173a2aa3b44f5ad7280f9f7c7d881f180533f24a041029e18bd54c5cbbf1bb",
+    "/private/yp/jiuge-training/tools/archive_failed_shards_20261109.py": "7207c765cc9f4c50d5511698d5da5acd88db64bbdd843e43191f264fa1584919",
+    "/private/yp/jiuge-training/tools/dedup_checkpoint_twins_20261109.py": "cc8e0d1308ac8f6b9c374ea7a0b06f78ca0e43125dc6b7a0e3736ccf075d9ada"
+  }
+}

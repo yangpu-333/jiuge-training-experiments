@@ -1,0 +1,19 @@
+{
+  "source_path": "/private/models/9G4B",
+  "model_path": "/private/yp/jiuge-training/models/9G4B-resolved",
+  "fields_made_explicit": {
+    "model_type": "fm9g",
+    "tie_word_embeddings": true,
+    "rope_theta": 10000.0
+  },
+  "auto_config_equivalent": true,
+  "all_adapter_direct_keys_present": true,
+  "original_config_sha256": "85b1fa1b3a8df46fb6bd0e4ea56bc35a727e6bf47bd71e70f9fd24e1ad9753ed",
+  "normalized_config_sha256": "358875d8033e2d63b5d90048c4a61d0238d2e7d68624d00f963725611359d0a5",
+  "configuration_code_sha256": "02e75d57107607027cd07e6b54b5d2b1323b09d6212fc0a4ceda93f896849b01",
+  "modeling_code_sha256": "657971977a71d20f64f3fe892fbe91aef483e59ff27bc692697b8593aaf53732",
+  "normalization_script_sha256": "cab4c29f18bf9a4afdccad785fd3965c8b3c45918c87ac5b878c02034cbc51a2",
+  "weights_modified": false,
+  "weight_source": "/private/models/9G4B/pytorch_model.bin",
+  "scope": "Only omitted defaults are made explicit; existing fields and tensors retain original values."
+}

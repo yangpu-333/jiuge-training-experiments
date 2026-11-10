@@ -1,0 +1,88 @@
+{
+  "source_url": "https://qy-obs-6d58.obs.cn-north-4.myhuaweicloud.com/9G4B.tar",
+  "prepared_at_utc": "2026-10-14T13:44:02.494840+00:00",
+  "archive_name": "9G4B.tar",
+  "archive_size_bytes": 9239613440,
+  "archive_sha256": "28ff0bad05c04b97433c57de1ed2aef0ccd233536e260773a4a9e7482b6db89c",
+  "extracted_size_bytes": 9239596243,
+  "source_project_url": "https://www.osredm.com/jiuyuan/CPM-9G-8B#20250225fm9g4b",
+  "members": [
+    {
+      "name": "9G4B/configuration_fm9g.py",
+      "size": 8960,
+      "type": "file",
+      "sha256": "02e75d57107607027cd07e6b54b5d2b1323b09d6212fc0a4ceda93f896849b01"
+    },
+    {
+      "name": "9G4B/tokenizer_config.json",
+      "size": 2969,
+      "type": "file",
+      "sha256": "6c3ade136685371da33fe93e701af106ff395cc457a4c9f4d01122bf4eb08dc6"
+    },
+    {
+      "name": "9G4B/config.json",
+      "size": 975,
+      "type": "file",
+      "sha256": "85b1fa1b3a8df46fb6bd0e4ea56bc35a727e6bf47bd71e70f9fd24e1ad9753ed"
+    },
+    {
+      "name": "9G4B/pytorch_model.bin",
+      "size": 9234656610,
+      "type": "file",
+      "sha256": "f74ea28d869a6467995ace692cef2e62cb801732691ca087eed3e6a3ab16826c"
+    },
+    {
+      "name": "9G4B/tokenizer.json",
+      "size": 3676758,
+      "type": "file",
+      "sha256": "b00802b71a613e3f7df3899fe9643a3ff949736d333a2b892448a974383fe372"
+    },
+    {
+      "name": "9G4B/tokenizer.model",
+      "size": 1181204,
+      "type": "file",
+      "sha256": "bb74d51116831c3bf65db812c553f94ab0c88dcf97a5bbb37e3504f6d359c530"
+    },
+    {
+      "name": "9G4B/special_tokens_map.json",
+      "size": 1632,
+      "type": "file",
+      "sha256": "068594063e37662c02b21acf42ebb334ef6a74fb810e68a2368f88f08351de76"
+    },
+    {
+      "name": "9G4B/infer_demo.py",
+      "size": 542,
+      "type": "file",
+      "sha256": "9b11cbba383b4f2a8c46e02f0c85c0b81fd845be9e048e8d693e1704f945bcb9"
+    },
+    {
+      "name": "9G4B/modeling_fm9g.py",
+      "size": 66480,
+      "type": "file",
+      "sha256": "657971977a71d20f64f3fe892fbe91aef483e59ff27bc692697b8593aaf53732"
+    },
+    {
+      "name": "9G4B/generation_config.json",
+      "size": 113,
+      "type": "file",
+      "sha256": "a022aa21060c3e0106edf2c9580e5d1878fa3ab01ad1fbe69a277cc847169e20"
+    }
+  ],
+  "mirror_added_files": [
+    {
+      "name": "README.md",
+      "sha256": "f297ee59c2f8c327aebde2054ffb797cbe8ea68ca0f3b0e2a8f55a4b4d8ec57d",
+      "part_of_original_archive": false
+    },
+    {
+      "name": "LICENSE",
+      "sha256": "27a4346972e83f1b261d0a32658338ac20519e774edd8c25c72a85a15827ffe6",
+      "part_of_original_archive": false
+    },
+    {
+      "name": "MODEL_SOURCE.json",
+      "part_of_original_archive": false,
+      "purpose": "Mirror provenance and original archive file hashes"
+    }
+  ]
+}

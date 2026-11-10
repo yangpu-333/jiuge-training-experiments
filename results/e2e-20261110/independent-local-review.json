@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "member_hashes_verified": 842,
+  "rank_step_records": 3600,
+  "paired_scalar_checks": 3600,
+  "checkpoint_file_crc_receipts": 144,
+  "means_seconds": {
+    "baseline": 403.85921406187117,
+    "current": 352.9369443839726,
+    "coalesced": 347.00975195070106
+  },
+  "incremental_speed_ratio": 1.0170807661742993,
+  "total_speed_ratio": 1.163826698793314,
+  "incremental_bootstrap95": [
+    1.012283470519201,
+    1.0225913649577212
+  ],
+  "total_bootstrap95": [
+    1.1553030038927397,
+    1.1696638345884147
+  ],
+  "scope": "local review of archived full-state/CRC/native-load receipts and independent whole-task statistics; no second execution of remote GPU state checks"
+}

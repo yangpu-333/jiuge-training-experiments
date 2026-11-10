@@ -1,0 +1,115 @@
+{
+  "completed": true,
+  "cycles": [
+    {
+      "cycle": 1,
+      "order": [
+        "baseline",
+        "current",
+        "coalesced"
+      ],
+      "baseline": 406.93056713044643,
+      "current": 351.13521153479815,
+      "coalesced": 346.9434368032962,
+      "incremental_ratio": 1.0120820118983214,
+      "total_ratio": 1.1729017585110297,
+      "all_checks_passed": true
+    },
+    {
+      "cycle": 2,
+      "order": [
+        "baseline",
+        "coalesced",
+        "current"
+      ],
+      "baseline": 402.54285070486367,
+      "coalesced": 346.21464755386114,
+      "current": 351.83489968720824,
+      "incremental_ratio": 1.0162334325628806,
+      "total_ratio": 1.1626973426716138,
+      "all_checks_passed": true
+    },
+    {
+      "cycle": 3,
+      "order": [
+        "current",
+        "baseline",
+        "coalesced"
+      ],
+      "current": 350.9378661522642,
+      "baseline": 405.9306164048612,
+      "coalesced": 347.96133334282786,
+      "incremental_ratio": 1.0085542056665926,
+      "total_ratio": 1.1665969103668175,
+      "all_checks_passed": true
+    },
+    {
+      "cycle": 4,
+      "order": [
+        "current",
+        "coalesced",
+        "baseline"
+      ],
+      "current": 352.5252311779186,
+      "coalesced": 346.0351798972115,
+      "baseline": 404.38197974674404,
+      "incremental_ratio": 1.018755466662768,
+      "total_ratio": 1.1686152253850728,
+      "all_checks_passed": true
+    },
+    {
+      "cycle": 5,
+      "order": [
+        "coalesced",
+        "baseline",
+        "current"
+      ],
+      "coalesced": 347.0360626289621,
+      "baseline": 397.076197437942,
+      "current": 357.07729029655457,
+      "incremental_ratio": 1.0289342484798998,
+      "total_ratio": 1.1441928957754484,
+      "all_checks_passed": true
+    },
+    {
+      "cycle": 6,
+      "order": [
+        "coalesced",
+        "current",
+        "baseline"
+      ],
+      "coalesced": 347.86785147804767,
+      "current": 354.1111674550921,
+      "baseline": 406.29307294636965,
+      "incremental_ratio": 1.0179473784384425,
+      "total_ratio": 1.167952345179586,
+      "all_checks_passed": true
+    }
+  ],
+  "means_seconds": {
+    "baseline": 403.85921406187117,
+    "current": 352.9369443839726,
+    "coalesced": 347.00975195070106
+  },
+  "incremental_speed_ratio": 1.0170807661742993,
+  "incremental_time_reduction": 0.016793913268606908,
+  "incremental_bootstrap95": [
+    1.012283470519201,
+    1.0225913649577212
+  ],
+  "total_speed_ratio": 1.163826698793314,
+  "total_time_reduction": 0.14076554435739774,
+  "total_bootstrap95": [
+    1.1553030038927397,
+    1.1696638345884147
+  ],
+  "processed_tokens_per_second": {
+    "baseline": 1014.2148197645166,
+    "current": 1160.5472493533623,
+    "coalesced": 1180.3702855537933
+  },
+  "candidate_incremental_selected": true,
+  "cpt_final_target_met": true,
+  "native_restore_and_integrity_passed": true,
+  "scope": "fixed prepared-cache 50-step complete CPT tasks, full durable native-format checkpoint, same atomic/fsync persistence for all arms; adapted-local baseline; no LoRA claim"
+}

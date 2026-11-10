@@ -1,0 +1,245 @@
+{
+  "preflight-control-baseline": {
+    "pid": 320,
+    "running": false,
+    "started_monotonic": 4796341.70540708,
+    "started_cst": "2026-11-09T22:35:48.650197",
+    "returncode": 0,
+    "seconds": 324.0840912871063,
+    "completed_cst": "2026-11-09T22:41:12.732927"
+  },
+  "preflight-resume-baseline": {
+    "pid": 739,
+    "running": false,
+    "started_monotonic": 4796888.771896943,
+    "started_cst": "2026-11-09T22:44:55.723148",
+    "returncode": 0,
+    "seconds": 201.55997049808502,
+    "completed_cst": "2026-11-09T22:48:17.275843"
+  },
+  "preflight-control-current": {
+    "pid": 1112,
+    "running": false,
+    "started_monotonic": 4797094.830806727,
+    "started_cst": "2026-11-09T22:48:21.781323",
+    "returncode": 0,
+    "seconds": 283.5504200300202,
+    "completed_cst": "2026-11-09T22:53:05.324611"
+  },
+  "preflight-resume-current": {
+    "pid": 1490,
+    "running": false,
+    "started_monotonic": 4797604.905584169,
+    "started_cst": "2026-11-09T22:56:51.852780",
+    "returncode": 0,
+    "seconds": 232.356623894535,
+    "completed_cst": "2026-11-09T23:00:44.205581"
+  },
+  "preflight-control-coalesced": {
+    "pid": 1895,
+    "running": false,
+    "started_monotonic": 4797841.552717896,
+    "started_cst": "2026-11-09T23:00:48.506176",
+    "returncode": 0,
+    "seconds": 275.61528447736055,
+    "completed_cst": "2026-11-09T23:05:24.111373"
+  },
+  "preflight-resume-coalesced": {
+    "pid": 2317,
+    "running": false,
+    "started_monotonic": 4798300.158412369,
+    "started_cst": "2026-11-09T23:08:27.106116",
+    "returncode": 0,
+    "seconds": 213.51448353379965,
+    "completed_cst": "2026-11-09T23:12:00.616331"
+  },
+  "cycle1-baseline": {
+    "pid": 2708,
+    "running": false,
+    "started_monotonic": 4798518.130897601,
+    "started_cst": "2026-11-09T23:12:05.078401",
+    "returncode": 0,
+    "seconds": 406.93056713044643,
+    "completed_cst": "2026-11-09T23:18:52.005535"
+  },
+  "cycle1-current": {
+    "pid": 3095,
+    "running": false,
+    "started_monotonic": 4799169.339904847,
+    "started_cst": "2026-11-09T23:22:56.288906",
+    "returncode": 0,
+    "seconds": 351.13521153479815,
+    "completed_cst": "2026-11-09T23:28:47.419150"
+  },
+  "cycle1-coalesced": {
+    "pid": 3484,
+    "running": false,
+    "started_monotonic": 4799765.911380808,
+    "started_cst": "2026-11-09T23:32:52.858363",
+    "returncode": 0,
+    "seconds": 346.9434368032962,
+    "completed_cst": "2026-11-09T23:38:39.798261"
+  },
+  "cycle2-baseline": {
+    "pid": 3873,
+    "running": false,
+    "started_monotonic": 4800321.689371313,
+    "started_cst": "2026-11-09T23:42:08.646905",
+    "returncode": 0,
+    "seconds": 402.54285070486367,
+    "completed_cst": "2026-11-09T23:48:51.176408"
+  },
+  "cycle2-coalesced": {
+    "pid": 4241,
+    "running": false,
+    "started_monotonic": 4800956.735856187,
+    "started_cst": "2026-11-09T23:52:43.683457",
+    "returncode": 0,
+    "seconds": 346.21464755386114,
+    "completed_cst": "2026-11-09T23:58:29.894534"
+  },
+  "cycle2-current": {
+    "pid": 4630,
+    "running": false,
+    "started_monotonic": 4801538.676889159,
+    "started_cst": "2026-11-10T00:02:25.632405",
+    "returncode": 0,
+    "seconds": 351.83489968720824,
+    "completed_cst": "2026-11-10T00:08:17.455688"
+  },
+  "cycle3-current": {
+    "pid": 5016,
+    "running": false,
+    "started_monotonic": 4802137.42566973,
+    "started_cst": "2026-11-10T00:12:24.388820",
+    "returncode": 0,
+    "seconds": 350.9378661522642,
+    "completed_cst": "2026-11-10T00:18:15.307447"
+  },
+  "cycle3-baseline": {
+    "pid": 5405,
+    "running": false,
+    "started_monotonic": 4802704.997442844,
+    "started_cst": "2026-11-10T00:21:51.946497",
+    "returncode": 0,
+    "seconds": 405.9306164048612,
+    "completed_cst": "2026-11-10T00:28:37.872028"
+  },
+  "cycle3-coalesced": {
+    "pid": 5773,
+    "running": false,
+    "started_monotonic": 4803322.572053485,
+    "started_cst": "2026-11-10T00:32:09.519818",
+    "returncode": 0,
+    "seconds": 347.96133334282786,
+    "completed_cst": "2026-11-10T00:37:57.477536"
+  },
+  "cycle4-current": {
+    "pid": 6165,
+    "running": false,
+    "started_monotonic": 4803884.899524697,
+    "started_cst": "2026-11-10T00:41:31.847350",
+    "returncode": 0,
+    "seconds": 352.5252311779186,
+    "completed_cst": "2026-11-10T00:47:24.368687"
+  },
+  "cycle4-coalesced": {
+    "pid": 6554,
+    "running": false,
+    "started_monotonic": 4804480.81571856,
+    "started_cst": "2026-11-10T00:51:27.762954",
+    "returncode": 0,
+    "seconds": 346.0351798972115,
+    "completed_cst": "2026-11-10T00:57:13.794889"
+  },
+  "cycle4-baseline": {
+    "pid": 6943,
+    "running": false,
+    "started_monotonic": 4805044.424571345,
+    "started_cst": "2026-11-10T01:00:51.371887",
+    "returncode": 0,
+    "seconds": 404.38197974674404,
+    "completed_cst": "2026-11-10T01:07:35.750544"
+  },
+  "cycle5-coalesced": {
+    "pid": 7311,
+    "running": false,
+    "started_monotonic": 4805681.392832729,
+    "started_cst": "2026-11-10T01:11:28.340732",
+    "returncode": 0,
+    "seconds": 347.0360626289621,
+    "completed_cst": "2026-11-10T01:17:15.372939"
+  },
+  "cycle5-baseline": {
+    "pid": 7700,
+    "running": false,
+    "started_monotonic": 4806236.337580266,
+    "started_cst": "2026-11-10T01:20:43.285657",
+    "returncode": 0,
+    "seconds": 397.076197437942,
+    "completed_cst": "2026-11-10T01:27:20.357785"
+  },
+  "cycle5-current": {
+    "pid": 8068,
+    "running": false,
+    "started_monotonic": 4806855.155597695,
+    "started_cst": "2026-11-10T01:31:02.103076",
+    "returncode": 0,
+    "seconds": 357.07729029655457,
+    "completed_cst": "2026-11-10T01:36:59.176846"
+  },
+  "cycle6-coalesced": {
+    "pid": 8460,
+    "running": false,
+    "started_monotonic": 4807438.829885402,
+    "started_cst": "2026-11-10T01:40:45.795739",
+    "returncode": 0,
+    "seconds": 347.86785147804767,
+    "completed_cst": "2026-11-10T01:46:33.641883"
+  },
+  "final-native50to51-coalesced": {
+    "pid": 8848,
+    "running": false,
+    "started_monotonic": 4808000.085712992,
+    "started_cst": "2026-11-10T01:50:07.058570",
+    "returncode": 0,
+    "seconds": 218.03805295191705,
+    "completed_cst": "2026-11-10T01:53:45.067831"
+  },
+  "cycle6-current": {
+    "pid": 9230,
+    "running": false,
+    "started_monotonic": 4808222.416907684,
+    "started_cst": "2026-11-10T01:53:49.377935",
+    "returncode": 0,
+    "seconds": 354.1111674550921,
+    "completed_cst": "2026-11-10T01:59:43.472045"
+  },
+  "final-native50to51-current": {
+    "pid": 9615,
+    "running": false,
+    "started_monotonic": 4808876.633269019,
+    "started_cst": "2026-11-10T02:04:43.602417",
+    "returncode": 0,
+    "seconds": 228.78235605545342,
+    "completed_cst": "2026-11-10T02:08:32.360230"
+  },
+  "cycle6-baseline": {
+    "pid": 10006,
+    "running": false,
+    "started_monotonic": 4809109.777595389,
+    "started_cst": "2026-11-10T02:08:36.737279",
+    "returncode": 0,
+    "seconds": 406.29307294636965,
+    "completed_cst": "2026-11-10T02:15:23.014677"
+  },
+  "final-native50to51-baseline": {
+    "pid": 10377,
+    "running": false,
+    "started_monotonic": 4809731.452081982,
+    "started_cst": "2026-11-10T02:18:58.411731",
+    "returncode": 0,
+    "seconds": 191.08106676489115,
+    "completed_cst": "2026-11-10T02:22:09.476572"
+  }
+}
