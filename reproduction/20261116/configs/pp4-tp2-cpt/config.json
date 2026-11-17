@@ -1,0 +1,50 @@
+{
+  "model": {
+    "name": "FM9G-4B",
+    "path": "/private/yp/jiuge-training/models/9G4B-resolved",
+    "layers": 62,
+    "hidden_size": 2560,
+    "num_attention_heads": 40,
+    "num_query_groups": 4,
+    "ffn_hidden_size": 6400,
+    "vocab_size": 73448,
+    "smoke": false,
+    "tie_word_embeddings": true
+  },
+  "task": {
+    "name": "cpt",
+    "seq_length": 512,
+    "micro_batch_size": 1,
+    "global_batch_size": 16,
+    "train_iters": 50,
+    "lr": 1e-05,
+    "save_interval": 50,
+    "save": "/tmp/yp-jiuge-corex5-e2e-20261114/fullstack-20261115-v1/host-pool-20261116-v1/performance-01-baseline/pp4-tp2-cpt/adapted-reference/checkpoints",
+    "load": "",
+    "data_path": "/private/yp/jiuge-training/data/4b-cpt-seq512-resolved",
+    "synthetic_data": false,
+    "bf16": true,
+    "recompute": false,
+    "eval_iters": 0,
+    "eval_interval": 100,
+    "seed": 1234,
+    "weight_decay": 0.01,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.0,
+    "distributed_optimizer": true,
+    "gradient_accumulation_steps": 16
+  },
+  "parallel": {
+    "dp": 1,
+    "tp": 2,
+    "pp": 4,
+    "nnodes": 1,
+    "nproc_per_node": 8,
+    "num_layers_in_first_pipeline_stage": 16,
+    "num_layers_in_last_pipeline_stage": 16
+  },
+  "backend": {
+    "rmsnorm": "reference"
+  }
+}

@@ -6,3 +6,8 @@ __pycache__/
 *.trace.json
 .env
 .jiuge-evidence-*/
+
+.verified-20261116/
+results/20261116/stage1/
+results/20261116/stage2/
+__pycache__/

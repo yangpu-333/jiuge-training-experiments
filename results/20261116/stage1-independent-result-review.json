@@ -1,0 +1,1924 @@
+{
+  "passed": true,
+  "performance_jobs": 36,
+  "full_numeric_arms": 6,
+  "native_restore_pairs": 4,
+  "paired_rank_steps_original_scalar_gate": 9600,
+  "host_pool_policy_receipts": 400,
+  "checkpoint_integrity_receipts_byte_totals_verified": 36,
+  "checkpoint_bodies_rehashed_now": false,
+  "numeric_scope": "Full10step model/master/Adam/gradient/input/RNG exact fast path; native save9/continue10 vs fresh load9/10. No new50-to51 audit.",
+  "cases": [
+    {
+      "case": "pp4-tp2-cpt",
+      "means": {
+        "baseline": {
+          "e2e_s": 269.03193132020533,
+          "iteration_log_sum_s": 114.32121666666667,
+          "save_timer_max_s": 116.07156833333333,
+          "other_envelope_s": 38.63914632020533,
+          "pack_max_rank_s": 27.243473924075563,
+          "write_fsync_max_rank_s": 90.4776410581544,
+          "startup_to_inprocess_s": 12.516567333333334,
+          "post_training_label_to_exit_fsync_s": 20.421922833333333
+        },
+        "current": {
+          "e2e_s": 243.4491501978288,
+          "iteration_log_sum_s": 102.48418333333333,
+          "save_timer_max_s": 97.822705,
+          "other_envelope_s": 43.142261864495474,
+          "pack_max_rank_s": 3.0410836512843766,
+          "write_fsync_max_rank_s": 94.45708559981237,
+          "startup_to_inprocess_s": 16.503502333333333,
+          "post_training_label_to_exit_fsync_s": 20.595823000000003
+        },
+        "host-only": {
+          "e2e_s": 233.08777165506035,
+          "iteration_log_sum_s": 101.99665,
+          "save_timer_max_s": 97.907105,
+          "other_envelope_s": 33.184016655060354,
+          "pack_max_rank_s": 3.064133149571717,
+          "write_fsync_max_rank_s": 94.58374607997636,
+          "startup_to_inprocess_s": 13.874132666666666,
+          "post_training_label_to_exit_fsync_s": 13.590586
+        }
+      },
+      "comparisons": {
+        "current_vs_host-only": {
+          "speed_ratio": 1.0444526903715134,
+          "throughput_gain_percent": 4.445269037151345,
+          "time_reduction_percent": 4.256075050723607,
+          "paired_bootstrap95_speed_ratio": [
+            1.036105005804284,
+            1.0548413860524766
+          ],
+          "faster_cycles": 6,
+          "final_target_mean_passed": null,
+          "final_target_ci_lower_passed": null
+        },
+        "baseline_vs_host-only": {
+          "speed_ratio": 1.1542086888982648,
+          "throughput_gain_percent": 15.420868889826478,
+          "time_reduction_percent": 13.360555190886902,
+          "paired_bootstrap95_speed_ratio": [
+            1.1282383253714727,
+            1.1803098331392643
+          ],
+          "faster_cycles": 6,
+          "final_target_mean_passed": true,
+          "final_target_ci_lower_passed": false
+        },
+        "baseline_vs_current": {
+          "speed_ratio": 1.1050847008567817,
+          "throughput_gain_percent": 10.508470085678168,
+          "time_reduction_percent": 9.509198776827565,
+          "paired_bootstrap95_speed_ratio": [
+            1.0705885975256362,
+            1.1349961249104994
+          ],
+          "faster_cycles": 6,
+          "final_target_mean_passed": false,
+          "final_target_ci_lower_passed": false
+        }
+      },
+      "increment_stable": true,
+      "additional_reduction_needed_for_mean_targets_s": 0,
+      "host_only_reductions_vs_current_s": {
+        "e2e_s": 10.361378542768449,
+        "iteration_log_sum_s": 0.4875333333333316,
+        "save_timer_max_s": -0.08440000000000225,
+        "other_envelope_s": 9.95824520943512,
+        "pack_max_rank_s": -0.023049498287340153,
+        "write_fsync_max_rank_s": -0.12666048016399145,
+        "startup_to_inprocess_s": 2.6293696666666673,
+        "post_training_label_to_exit_fsync_s": 7.005237000000003
+      },
+      "sensitivity_exclude_cycle1_not_acceptance": {
+        "throughput_percent": 15.727629372455066,
+        "time_reduction_percent": 13.590211307135336,
+        "note": "Diagnostic only; preregistered official result retains ALL6cycles"
+      }
+    },
+    {
+      "case": "pp4-tp2-lora",
+      "means": {
+        "baseline": {
+          "e2e_s": 177.02039693202823,
+          "iteration_log_sum_s": 114.48481666666666,
+          "save_timer_max_s": 14.218494999999999,
+          "other_envelope_s": 48.31708526536157,
+          "pack_max_rank_s": 0,
+          "write_fsync_max_rank_s": 14.193208400470516,
+          "startup_to_inprocess_s": 14.5318215,
+          "post_training_label_to_exit_fsync_s": 20.667113666666665
+        },
+        "current": {
+          "e2e_s": 159.2107177140812,
+          "iteration_log_sum_s": 101.98984999999999,
+          "save_timer_max_s": 14.209556666666666,
+          "other_envelope_s": 43.011311047414544,
+          "pack_max_rank_s": 0,
+          "write_fsync_max_rank_s": 14.185600001364946,
+          "startup_to_inprocess_s": 13.190243166666667,
+          "post_training_label_to_exit_fsync_s": 20.441378333333333
+        },
+        "host-only": {
+          "e2e_s": 153.06847217058143,
+          "iteration_log_sum_s": 101.48586666666667,
+          "save_timer_max_s": 14.254015,
+          "other_envelope_s": 37.328590503914754,
+          "pack_max_rank_s": 0,
+          "write_fsync_max_rank_s": 14.230433378679058,
+          "startup_to_inprocess_s": 13.689319666666666,
+          "post_training_label_to_exit_fsync_s": 14.176259166666666
+        }
+      },
+      "comparisons": {
+        "current_vs_host-only": {
+          "speed_ratio": 1.04012743745593,
+          "throughput_gain_percent": 4.012743745592995,
+          "time_reduction_percent": 3.857934711738642,
+          "paired_bootstrap95_speed_ratio": [
+            1.0115445412060253,
+            1.0651354565054982
+          ],
+          "faster_cycles": 5,
+          "final_target_mean_passed": null,
+          "final_target_ci_lower_passed": null
+        },
+        "baseline_vs_host-only": {
+          "speed_ratio": 1.156478498947546,
+          "throughput_gain_percent": 15.647849894754607,
+          "time_reduction_percent": 13.53060165752752,
+          "paired_bootstrap95_speed_ratio": [
+            1.1006332417962121,
+            1.2478892090091065
+          ],
+          "faster_cycles": 6,
+          "final_target_mean_passed": false,
+          "final_target_ci_lower_passed": false
+        },
+        "baseline_vs_current": {
+          "speed_ratio": 1.1118623135028547,
+          "throughput_gain_percent": 11.18623135028547,
+          "time_reduction_percent": 10.060806283688063,
+          "paired_bootstrap95_speed_ratio": [
+            1.0698551107485623,
+            1.1768218117134486
+          ],
+          "faster_cycles": 6,
+          "final_target_mean_passed": false,
+          "final_target_ci_lower_passed": false
+        }
+      },
+      "increment_stable": true,
+      "additional_reduction_needed_for_mean_targets_s": 2.601134778357448,
+      "host_only_reductions_vs_current_s": {
+        "e2e_s": 6.142245543499769,
+        "iteration_log_sum_s": 0.5039833333333235,
+        "save_timer_max_s": -0.04445833333333482,
+        "other_envelope_s": 5.682720543499791,
+        "pack_max_rank_s": 0,
+        "write_fsync_max_rank_s": -0.04483337731411119,
+        "startup_to_inprocess_s": -0.49907649999999926,
+        "post_training_label_to_exit_fsync_s": 6.265119166666667
+      },
+      "sensitivity_exclude_cycle1_not_acceptance": {
+        "throughput_percent": 11.293821146184913,
+        "time_reduction_percent": 10.147752166178591,
+        "note": "Diagnostic only; preregistered official result retains ALL6cycles"
+      }
+    }
+  ],
+  "runs": [
+    {
+      "cycle": 1,
+      "case": "pp4-tp2-cpt",
+      "arm": "baseline",
+      "e2e_s": 256.98481616564095,
+      "iteration_log_sum_s": 111.2077,
+      "save_timer_max_s": 110.03381,
+      "other_envelope_s": 35.74330616564096,
+      "pack_max_rank_s": 23.490293765440583,
+      "pack_rank_range_s": [
+        17.738645466044545,
+        23.490293765440583
+      ],
+      "write_fsync_max_rank_s": 91.44953306019306,
+      "write_fsync_rank_range_s": [
+        81.56845094822347,
+        91.44953306019306
+      ],
+      "checkpoint_bytes": 60453051016,
+      "pretrain_max_rank_s": 226.93190839886665,
+      "source": "performance-01-baseline\\pp4-tp2-cpt\\adapted-reference-control",
+      "startup_to_inprocess_s": 10.84696,
+      "distributed_init_s": 2.537473,
+      "model_optimizer_build_s": 1.506245,
+      "dataloader_build_s": 1.862033,
+      "post_training_label_to_exit_fsync_s": 19.604867,
+      "training_label_to_done_s": 220.524867
+    },
+    {
+      "cycle": 1,
+      "case": "pp4-tp2-lora",
+      "arm": "baseline",
+      "e2e_s": 209.4494497962296,
+      "iteration_log_sum_s": 117.7792,
+      "save_timer_max_s": 14.094610000000001,
+      "other_envelope_s": 77.5756397962296,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 14.072854040190578,
+      "write_fsync_rank_range_s": [
+        9.982483638450503,
+        14.072854040190578
+      ],
+      "checkpoint_bytes": 8952913742,
+      "pretrain_max_rank_s": 169.09427729062736,
+      "source": "performance-01-baseline\\pp4-tp2-lora\\adapted-reference-control",
+      "startup_to_inprocess_s": 20.60798,
+      "distributed_init_s": 4.563324,
+      "model_optimizer_build_s": 28.517019,
+      "dataloader_build_s": 5.263631,
+      "post_training_label_to_exit_fsync_s": 20.511687,
+      "training_label_to_done_s": 129.880713
+    },
+    {
+      "cycle": 1,
+      "case": "pp4-tp2-cpt",
+      "arm": "current",
+      "e2e_s": 234.3606620747596,
+      "iteration_log_sum_s": 102.3378,
+      "save_timer_max_s": 94.96419,
+      "other_envelope_s": 37.058672074759585,
+      "pack_max_rank_s": 2.6597482673823833,
+      "pack_rank_range_s": [
+        2.1076207235455513,
+        2.6597482673823833
+      ],
+      "write_fsync_max_rank_s": 91.99200595356524,
+      "write_fsync_rank_range_s": [
+        72.19784831814468,
+        91.99200595356524
+      ],
+      "checkpoint_bytes": 60453028872,
+      "pretrain_max_rank_s": 202.9993892852217,
+      "source": "performance-01-current\\pp4-tp2-cpt\\packed-control",
+      "startup_to_inprocess_s": 11.888296,
+      "distributed_init_s": 2.854126,
+      "model_optimizer_build_s": 1.556532,
+      "dataloader_build_s": 1.660792,
+      "post_training_label_to_exit_fsync_s": 19.689136,
+      "training_label_to_done_s": 196.606735,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "direct_tp_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cycle": 1,
+      "case": "pp4-tp2-lora",
+      "arm": "current",
+      "e2e_s": 165.71187097765505,
+      "iteration_log_sum_s": 105.7097,
+      "save_timer_max_s": 14.54312,
+      "other_envelope_s": 45.45905097765505,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 14.519214499741793,
+      "write_fsync_rank_range_s": [
+        10.213200017809868,
+        14.519214499741793
+      ],
+      "checkpoint_bytes": 8952891470,
+      "pretrain_max_rank_s": 130.9507401920855,
+      "source": "performance-01-current\\pp4-tp2-lora\\training-control",
+      "startup_to_inprocess_s": 13.7712,
+      "distributed_init_s": 3.342388,
+      "model_optimizer_build_s": 1.688118,
+      "dataloader_build_s": 5.755428,
+      "post_training_label_to_exit_fsync_s": 21.996683,
+      "training_label_to_done_s": 119.054443,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ],
+      "direct_tp_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ]
+    },
+    {
+      "cycle": 1,
+      "case": "pp4-tp2-cpt",
+      "arm": "host-only",
+      "e2e_s": 225.76712633110583,
+      "iteration_log_sum_s": 100.7929,
+      "save_timer_max_s": 94.64616000000001,
+      "other_envelope_s": 30.328066331105816,
+      "pack_max_rank_s": 2.557867581024766,
+      "pack_rank_range_s": [
+        2.1616072840988636,
+        2.557867581024766
+      ],
+      "write_fsync_max_rank_s": 91.74033069238067,
+      "write_fsync_rank_range_s": [
+        72.43514290079474,
+        91.74033069238067
+      ],
+      "checkpoint_bytes": 60453028872,
+      "pretrain_max_rank_s": 201.03931818157434,
+      "source": "performance-01-host-only\\pp4-tp2-cpt\\packed-control",
+      "startup_to_inprocess_s": 12.263242,
+      "distributed_init_s": 2.712025,
+      "model_optimizer_build_s": 1.470976,
+      "dataloader_build_s": 1.602524,
+      "post_training_label_to_exit_fsync_s": 12.926506,
+      "training_label_to_done_s": 194.687065,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "direct_tp_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cycle": 1,
+      "case": "pp4-tp2-lora",
+      "arm": "host-only",
+      "e2e_s": 152.26503713428974,
+      "iteration_log_sum_s": 102.3103,
+      "save_timer_max_s": 14.03874,
+      "other_envelope_s": 35.91599713428974,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 14.01830088160932,
+      "write_fsync_rank_range_s": [
+        10.135476408526301,
+        14.01830088160932
+      ],
+      "checkpoint_bytes": 8952891470,
+      "pretrain_max_rank_s": 126.6503006350249,
+      "source": "performance-01-host-only\\pp4-tp2-lora\\training-control",
+      "startup_to_inprocess_s": 13.068234,
+      "distributed_init_s": 2.997295,
+      "model_optimizer_build_s": 1.512756,
+      "dataloader_build_s": 5.473432,
+      "post_training_label_to_exit_fsync_s": 13.679641,
+      "training_label_to_done_s": 115.426761,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ],
+      "direct_tp_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ]
+    },
+    {
+      "cycle": 2,
+      "case": "pp4-tp2-cpt",
+      "arm": "baseline",
+      "e2e_s": 260.15328410826623,
+      "iteration_log_sum_s": 113.8537,
+      "save_timer_max_s": 110.49459,
+      "other_envelope_s": 35.80499410826623,
+      "pack_max_rank_s": 23.075093356892467,
+      "pack_rank_range_s": [
+        18.20012820325792,
+        23.075093356892467
+      ],
+      "write_fsync_max_rank_s": 87.45641735382378,
+      "write_fsync_rank_range_s": [
+        78.28041406348348,
+        87.45641735382378
+      ],
+      "checkpoint_bytes": 60453051016,
+      "pretrain_max_rank_s": 230.1462425980717,
+      "source": "performance-02-baseline\\pp4-tp2-cpt\\adapted-reference-control",
+      "startup_to_inprocess_s": 11.304681,
+      "distributed_init_s": 2.456574,
+      "model_optimizer_build_s": 1.498543,
+      "dataloader_build_s": 1.87584,
+      "post_training_label_to_exit_fsync_s": 19.157012,
+      "training_label_to_done_s": 223.757726
+    },
+    {
+      "cycle": 2,
+      "case": "pp4-tp2-lora",
+      "arm": "baseline",
+      "e2e_s": 172.55758486315608,
+      "iteration_log_sum_s": 116.8411,
+      "save_timer_max_s": 14.234549999999999,
+      "other_envelope_s": 41.481934863156084,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 14.2114488016814,
+      "write_fsync_rank_range_s": [
+        11.028579529374838,
+        14.2114488016814
+      ],
+      "checkpoint_bytes": 8952913742,
+      "pretrain_max_rank_s": 139.81368303485215,
+      "source": "performance-02-baseline\\pp4-tp2-lora\\adapted-reference-control",
+      "startup_to_inprocess_s": 12.175261,
+      "distributed_init_s": 2.652085,
+      "model_optimizer_build_s": 1.56794,
+      "dataloader_build_s": 5.111282,
+      "post_training_label_to_exit_fsync_s": 21.460179,
+      "training_label_to_done_s": 129.488144
+    },
+    {
+      "cycle": 2,
+      "case": "pp4-tp2-cpt",
+      "arm": "current",
+      "e2e_s": 239.64892978779972,
+      "iteration_log_sum_s": 103.175,
+      "save_timer_max_s": 95.47406,
+      "other_envelope_s": 40.99986978779971,
+      "pack_max_rank_s": 2.5727609917521477,
+      "pack_rank_range_s": [
+        2.0649713184684515,
+        2.5727609917521477
+      ],
+      "write_fsync_max_rank_s": 92.66630414500833,
+      "write_fsync_rank_range_s": [
+        78.44282660074532,
+        92.66630414500833
+      ],
+      "checkpoint_bytes": 60453028872,
+      "pretrain_max_rank_s": 204.1501906067133,
+      "source": "performance-02-current\\pp4-tp2-cpt\\packed-control",
+      "startup_to_inprocess_s": 15.861384,
+      "distributed_init_s": 2.698592,
+      "model_optimizer_build_s": 1.49703,
+      "dataloader_build_s": 1.585115,
+      "post_training_label_to_exit_fsync_s": 20.105484,
+      "training_label_to_done_s": 197.799576,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "direct_tp_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cycle": 2,
+      "case": "pp4-tp2-lora",
+      "arm": "current",
+      "e2e_s": 157.16974881105125,
+      "iteration_log_sum_s": 100.7863,
+      "save_timer_max_s": 13.99771,
+      "other_envelope_s": 42.385738811051255,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 13.976914012804627,
+      "write_fsync_rank_range_s": [
+        10.730978060513735,
+        13.976914012804627
+      ],
+      "checkpoint_bytes": 8952891470,
+      "pretrain_max_rank_s": 124.93631005100906,
+      "source": "performance-02-current\\pp4-tp2-lora\\training-control",
+      "startup_to_inprocess_s": 12.774281,
+      "distributed_init_s": 2.761935,
+      "model_optimizer_build_s": 1.552638,
+      "dataloader_build_s": 5.660001,
+      "post_training_label_to_exit_fsync_s": 20.286381,
+      "training_label_to_done_s": 114.02616,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ],
+      "direct_tp_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ]
+    },
+    {
+      "cycle": 2,
+      "case": "pp4-tp2-cpt",
+      "arm": "host-only",
+      "e2e_s": 229.59669457376003,
+      "iteration_log_sum_s": 103.4197,
+      "save_timer_max_s": 95.91844999999999,
+      "other_envelope_s": 30.258544573760034,
+      "pack_max_rank_s": 2.880461538210511,
+      "pack_rank_range_s": [
+        2.054133443161845,
+        2.880461538210511
+      ],
+      "write_fsync_max_rank_s": 92.80841205455363,
+      "write_fsync_rank_range_s": [
+        67.7638719510287,
+        92.80841205455363
+      ],
+      "checkpoint_bytes": 60453028872,
+      "pretrain_max_rank_s": 204.924527220428,
+      "source": "performance-02-host-only\\pp4-tp2-cpt\\packed-control",
+      "startup_to_inprocess_s": 11.601269,
+      "distributed_init_s": 2.877748,
+      "model_optimizer_build_s": 1.462547,
+      "dataloader_build_s": 1.766258,
+      "post_training_label_to_exit_fsync_s": 13.287175,
+      "training_label_to_done_s": 198.497636,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "direct_tp_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cycle": 2,
+      "case": "pp4-tp2-lora",
+      "arm": "host-only",
+      "e2e_s": 151.98620990477502,
+      "iteration_log_sum_s": 102.2023,
+      "save_timer_max_s": 14.148370000000002,
+      "other_envelope_s": 35.63553990477503,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 14.122002132236958,
+      "write_fsync_rank_range_s": [
+        10.882070783525705,
+        14.122002132236958
+      ],
+      "checkpoint_bytes": 8952891470,
+      "pretrain_max_rank_s": 126.06787215732038,
+      "source": "performance-02-host-only\\pp4-tp2-lora\\training-control",
+      "startup_to_inprocess_s": 13.266,
+      "distributed_init_s": 2.746853,
+      "model_optimizer_build_s": 1.489603,
+      "dataloader_build_s": 5.236141,
+      "post_training_label_to_exit_fsync_s": 13.550033,
+      "training_label_to_done_s": 115.59104,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ],
+      "direct_tp_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ]
+    },
+    {
+      "cycle": 3,
+      "case": "pp4-tp2-cpt",
+      "arm": "baseline",
+      "e2e_s": 271.1439623981714,
+      "iteration_log_sum_s": 115.2411,
+      "save_timer_max_s": 117.38361,
+      "other_envelope_s": 38.5192523981714,
+      "pack_max_rank_s": 28.606658959761262,
+      "pack_rank_range_s": [
+        18.445182574912906,
+        28.606658959761262
+      ],
+      "write_fsync_max_rank_s": 89.8774955291301,
+      "write_fsync_rank_range_s": [
+        69.39996952936053,
+        89.8774955291301
+      ],
+      "checkpoint_bytes": 60453051016,
+      "pretrain_max_rank_s": 238.15555502288043,
+      "source": "performance-03-baseline\\pp4-tp2-cpt\\adapted-reference-control",
+      "startup_to_inprocess_s": 12.784262,
+      "distributed_init_s": 2.478165,
+      "model_optimizer_build_s": 1.526202,
+      "dataloader_build_s": 1.901408,
+      "post_training_label_to_exit_fsync_s": 20.413518,
+      "training_label_to_done_s": 231.934236
+    },
+    {
+      "cycle": 3,
+      "case": "pp4-tp2-lora",
+      "arm": "baseline",
+      "e2e_s": 169.24782133474946,
+      "iteration_log_sum_s": 113.2818,
+      "save_timer_max_s": 14.18736,
+      "other_envelope_s": 41.77866133474946,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 14.162791889160872,
+      "write_fsync_rank_range_s": [
+        9.490703547373414,
+        14.162791889160872
+      ],
+      "checkpoint_bytes": 8952913742,
+      "pretrain_max_rank_s": 136.39127077907324,
+      "source": "performance-03-baseline\\pp4-tp2-lora\\adapted-reference-control",
+      "startup_to_inprocess_s": 14.099642,
+      "distributed_init_s": 2.533593,
+      "model_optimizer_build_s": 1.45675,
+      "dataloader_build_s": 5.126958,
+      "post_training_label_to_exit_fsync_s": 19.75328,
+      "training_label_to_done_s": 126.170879
+    },
+    {
+      "cycle": 3,
+      "case": "pp4-tp2-cpt",
+      "arm": "current",
+      "e2e_s": 240.5407892446965,
+      "iteration_log_sum_s": 101.9854,
+      "save_timer_max_s": 99.07092,
+      "other_envelope_s": 39.4844692446965,
+      "pack_max_rank_s": 2.6524977143853903,
+      "pack_rank_range_s": [
+        2.1397031657397747,
+        2.6524977143853903
+      ],
+      "write_fsync_max_rank_s": 96.12886878848076,
+      "write_fsync_rank_range_s": [
+        77.64003714732826,
+        96.12886878848076
+      ],
+      "checkpoint_bytes": 60453028872,
+      "pretrain_max_rank_s": 206.72698877938092,
+      "source": "performance-03-current\\pp4-tp2-cpt\\packed-control",
+      "startup_to_inprocess_s": 13.111633,
+      "distributed_init_s": 2.777078,
+      "model_optimizer_build_s": 1.47515,
+      "dataloader_build_s": 1.610826,
+      "post_training_label_to_exit_fsync_s": 21.166485,
+      "training_label_to_done_s": 200.296486,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "direct_tp_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cycle": 3,
+      "case": "pp4-tp2-lora",
+      "arm": "current",
+      "e2e_s": 157.06371678598225,
+      "iteration_log_sum_s": 100.2542,
+      "save_timer_max_s": 14.008149999999999,
+      "other_envelope_s": 42.80136678598225,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 13.98561374284327,
+      "write_fsync_rank_range_s": [
+        8.778472121804953,
+        13.98561374284327
+      ],
+      "checkpoint_bytes": 8952891470,
+      "pretrain_max_rank_s": 124.55519958399236,
+      "source": "performance-03-current\\pp4-tp2-lora\\training-control",
+      "startup_to_inprocess_s": 13.554133,
+      "distributed_init_s": 3.438429,
+      "model_optimizer_build_s": 1.510722,
+      "dataloader_build_s": 5.354801,
+      "post_training_label_to_exit_fsync_s": 19.580389,
+      "training_label_to_done_s": 113.522885,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ],
+      "direct_tp_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ]
+    },
+    {
+      "cycle": 3,
+      "case": "pp4-tp2-cpt",
+      "arm": "host-only",
+      "e2e_s": 233.59239686653018,
+      "iteration_log_sum_s": 101.2306,
+      "save_timer_max_s": 99.87517999999999,
+      "other_envelope_s": 32.48661686653021,
+      "pack_max_rank_s": 2.7829113602638245,
+      "pack_rank_range_s": [
+        2.168150832876563,
+        2.7829113602638245
+      ],
+      "write_fsync_max_rank_s": 96.94123214296997,
+      "write_fsync_rank_range_s": [
+        80.03928479366004,
+        96.94123214296997
+      ],
+      "checkpoint_bytes": 60453028872,
+      "pretrain_max_rank_s": 206.52532858401537,
+      "source": "performance-03-host-only\\pp4-tp2-cpt\\packed-control",
+      "startup_to_inprocess_s": 13.482901,
+      "distributed_init_s": 2.724173,
+      "model_optimizer_build_s": 1.441389,
+      "dataloader_build_s": 1.601974,
+      "post_training_label_to_exit_fsync_s": 13.829364,
+      "training_label_to_done_s": 200.409174,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "direct_tp_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cycle": 3,
+      "case": "pp4-tp2-lora",
+      "arm": "host-only",
+      "e2e_s": 150.70030105300248,
+      "iteration_log_sum_s": 100.4245,
+      "save_timer_max_s": 14.322629999999998,
+      "other_envelope_s": 35.953171053002485,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 14.30175551213324,
+      "write_fsync_rank_range_s": [
+        9.907638246193528,
+        14.30175551213324
+      ],
+      "checkpoint_bytes": 8952891470,
+      "pretrain_max_rank_s": 124.3510448653251,
+      "source": "performance-03-host-only\\pp4-tp2-lora\\training-control",
+      "startup_to_inprocess_s": 13.421848,
+      "distributed_init_s": 2.770869,
+      "model_optimizer_build_s": 1.428922,
+      "dataloader_build_s": 5.427878,
+      "post_training_label_to_exit_fsync_s": 13.550824,
+      "training_label_to_done_s": 113.994752,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ],
+      "direct_tp_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ]
+    },
+    {
+      "cycle": 4,
+      "case": "pp4-tp2-cpt",
+      "arm": "baseline",
+      "e2e_s": 277.55320544168353,
+      "iteration_log_sum_s": 115.57679999999999,
+      "save_timer_max_s": 123.18772,
+      "other_envelope_s": 38.78868544168354,
+      "pack_max_rank_s": 28.934495147317648,
+      "pack_rank_range_s": [
+        21.29647359251976,
+        28.934495147317648
+      ],
+      "write_fsync_max_rank_s": 95.0593550670892,
+      "write_fsync_rank_range_s": [
+        59.24430031515658,
+        95.0593550670892
+      ],
+      "checkpoint_bytes": 60453051016,
+      "pretrain_max_rank_s": 244.2287398315966,
+      "source": "performance-04-baseline\\pp4-tp2-cpt\\adapted-reference-control",
+      "startup_to_inprocess_s": 12.930573,
+      "distributed_init_s": 2.523144,
+      "model_optimizer_build_s": 1.51013,
+      "dataloader_build_s": 1.899268,
+      "post_training_label_to_exit_fsync_s": 20.6025,
+      "training_label_to_done_s": 237.984098
+    },
+    {
+      "cycle": 4,
+      "case": "pp4-tp2-lora",
+      "arm": "baseline",
+      "e2e_s": 170.9455850608647,
+      "iteration_log_sum_s": 112.6996,
+      "save_timer_max_s": 14.28684,
+      "other_envelope_s": 43.959145060864685,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 14.25199768692255,
+      "write_fsync_rank_range_s": [
+        9.737100252881646,
+        14.25199768692255
+      ],
+      "checkpoint_bytes": 8952913742,
+      "pretrain_max_rank_s": 137.74851024150848,
+      "source": "performance-04-baseline\\pp4-tp2-lora\\adapted-reference-control",
+      "startup_to_inprocess_s": 14.199256,
+      "distributed_init_s": 3.856417,
+      "model_optimizer_build_s": 1.51317,
+      "dataloader_build_s": 5.095903,
+      "post_training_label_to_exit_fsync_s": 20.420675,
+      "training_label_to_done_s": 125.755123
+    },
+    {
+      "cycle": 4,
+      "case": "pp4-tp2-cpt",
+      "arm": "current",
+      "e2e_s": 240.79617796465755,
+      "iteration_log_sum_s": 100.6627,
+      "save_timer_max_s": 100.62897,
+      "other_envelope_s": 39.50450796465755,
+      "pack_max_rank_s": 3.15900507196784,
+      "pack_rank_range_s": [
+        2.459063660353422,
+        3.15900507196784
+      ],
+      "write_fsync_max_rank_s": 97.26557637006044,
+      "write_fsync_rank_range_s": [
+        83.93895462341607,
+        97.26557637006044
+      ],
+      "checkpoint_bytes": 60453028872,
+      "pretrain_max_rank_s": 206.74014468491077,
+      "source": "performance-04-current\\pp4-tp2-cpt\\packed-control",
+      "startup_to_inprocess_s": 13.499399,
+      "distributed_init_s": 2.746344,
+      "model_optimizer_build_s": 1.479574,
+      "dataloader_build_s": 1.604124,
+      "post_training_label_to_exit_fsync_s": 20.762132,
+      "training_label_to_done_s": 200.599659,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "direct_tp_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cycle": 4,
+      "case": "pp4-tp2-lora",
+      "arm": "current",
+      "e2e_s": 155.43265928141773,
+      "iteration_log_sum_s": 99.0675,
+      "save_timer_max_s": 14.25092,
+      "other_envelope_s": 42.11423928141773,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 14.228660184890032,
+      "write_fsync_rank_range_s": [
+        10.515230299904943,
+        14.228660184890032
+      ],
+      "checkpoint_bytes": 8952891470,
+      "pretrain_max_rank_s": 123.6962214987725,
+      "source": "performance-04-current\\pp4-tp2-lora\\training-control",
+      "startup_to_inprocess_s": 13.382951,
+      "distributed_init_s": 2.904437,
+      "model_optimizer_build_s": 1.504412,
+      "dataloader_build_s": 5.554378,
+      "post_training_label_to_exit_fsync_s": 19.472358,
+      "training_label_to_done_s": 112.510059,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ],
+      "direct_tp_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ]
+    },
+    {
+      "cycle": 4,
+      "case": "pp4-tp2-cpt",
+      "arm": "host-only",
+      "e2e_s": 231.5065361801535,
+      "iteration_log_sum_s": 101.2486,
+      "save_timer_max_s": 99.14041,
+      "other_envelope_s": 31.117526180153476,
+      "pack_max_rank_s": 3.08588794618845,
+      "pack_rank_range_s": [
+        2.297113226726651,
+        3.08588794618845
+      ],
+      "write_fsync_max_rank_s": 95.84772541932762,
+      "write_fsync_rank_range_s": [
+        76.12393608875573,
+        95.84772541932762
+      ],
+      "checkpoint_bytes": 60453028872,
+      "pretrain_max_rank_s": 205.67500608414412,
+      "source": "performance-04-host-only\\pp4-tp2-cpt\\packed-control",
+      "startup_to_inprocess_s": 13.114819,
+      "distributed_init_s": 2.666897,
+      "model_optimizer_build_s": 1.475805,
+      "dataloader_build_s": 1.57456,
+      "post_training_label_to_exit_fsync_s": 12.930194,
+      "training_label_to_done_s": 199.638411,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "direct_tp_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cycle": 4,
+      "case": "pp4-tp2-lora",
+      "arm": "host-only",
+      "e2e_s": 158.5955288745463,
+      "iteration_log_sum_s": 101.7363,
+      "save_timer_max_s": 14.19183,
+      "other_envelope_s": 42.66739887454629,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 14.16851745173335,
+      "write_fsync_rank_range_s": [
+        9.297831499949098,
+        14.16851745173335
+      ],
+      "checkpoint_bytes": 8952891470,
+      "pretrain_max_rank_s": 126.40677211619914,
+      "source": "performance-04-host-only\\pp4-tp2-lora\\training-control",
+      "startup_to_inprocess_s": 15.816159,
+      "distributed_init_s": 3.624006,
+      "model_optimizer_build_s": 1.443026,
+      "dataloader_build_s": 5.460275,
+      "post_training_label_to_exit_fsync_s": 17.086541,
+      "training_label_to_done_s": 115.0573,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ],
+      "direct_tp_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ]
+    },
+    {
+      "cycle": 5,
+      "case": "pp4-tp2-cpt",
+      "arm": "baseline",
+      "e2e_s": 271.70211163163185,
+      "iteration_log_sum_s": 115.4098,
+      "save_timer_max_s": 118.19006,
+      "other_envelope_s": 38.10225163163183,
+      "pack_max_rank_s": 29.477827165275812,
+      "pack_rank_range_s": [
+        21.67612288892269,
+        29.477827165275812
+      ],
+      "write_fsync_max_rank_s": 88.84428906440735,
+      "write_fsync_rank_range_s": [
+        64.7862097080797,
+        88.84428906440735
+      ],
+      "checkpoint_bytes": 60453051016,
+      "pretrain_max_rank_s": 239.14764717034996,
+      "source": "performance-05-baseline\\pp4-tp2-cpt\\adapted-reference-control",
+      "startup_to_inprocess_s": 13.147384,
+      "distributed_init_s": 2.517268,
+      "model_optimizer_build_s": 1.467986,
+      "dataloader_build_s": 1.849649,
+      "post_training_label_to_exit_fsync_s": 19.622797,
+      "training_label_to_done_s": 232.986015
+    },
+    {
+      "cycle": 5,
+      "case": "pp4-tp2-lora",
+      "arm": "baseline",
+      "e2e_s": 169.80547366850078,
+      "iteration_log_sum_s": 112.9831,
+      "save_timer_max_s": 14.293899999999999,
+      "other_envelope_s": 42.52847366850079,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 14.272116770967841,
+      "write_fsync_rank_range_s": [
+        7.064408157020807,
+        14.272116770967841
+      ],
+      "checkpoint_bytes": 8952913742,
+      "pretrain_max_rank_s": 137.23775343224406,
+      "source": "performance-05-baseline\\pp4-tp2-lora\\adapted-reference-control",
+      "startup_to_inprocess_s": 12.571825,
+      "distributed_init_s": 3.102384,
+      "model_optimizer_build_s": 1.652472,
+      "dataloader_build_s": 5.11947,
+      "post_training_label_to_exit_fsync_s": 21.182096,
+      "training_label_to_done_s": 126.073121
+    },
+    {
+      "cycle": 5,
+      "case": "pp4-tp2-cpt",
+      "arm": "current",
+      "e2e_s": 262.2239911723882,
+      "iteration_log_sum_s": 105.36410000000001,
+      "save_timer_max_s": 97.08009,
+      "other_envelope_s": 59.77980117238819,
+      "pack_max_rank_s": 3.5275322794914246,
+      "pack_rank_range_s": [
+        2.4587925337255,
+        3.5275322794914246
+      ],
+      "write_fsync_max_rank_s": 93.04423056170344,
+      "write_fsync_rank_range_s": [
+        79.45288159325719,
+        93.04423056170344
+      ],
+      "checkpoint_bytes": 60453028872,
+      "pretrain_max_rank_s": 211.27258290722966,
+      "source": "performance-05-current\\pp4-tp2-cpt\\packed-control",
+      "startup_to_inprocess_s": 30.398784,
+      "distributed_init_s": 6.416981,
+      "model_optimizer_build_s": 1.598651,
+      "dataloader_build_s": 1.607575,
+      "post_training_label_to_exit_fsync_s": 21.00419,
+      "training_label_to_done_s": 201.091738,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "direct_tp_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cycle": 5,
+      "case": "pp4-tp2-lora",
+      "arm": "current",
+      "e2e_s": 160.38080377690494,
+      "iteration_log_sum_s": 103.4551,
+      "save_timer_max_s": 14.194139999999999,
+      "other_envelope_s": 42.73156377690494,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 14.165215043351054,
+      "write_fsync_rank_range_s": [
+        10.672969358041883,
+        14.165215043351054
+      ],
+      "checkpoint_bytes": 8952891470,
+      "pretrain_max_rank_s": 127.75837075710297,
+      "source": "performance-05-current\\pp4-tp2-lora\\training-control",
+      "startup_to_inprocess_s": 13.042891,
+      "distributed_init_s": 2.73314,
+      "model_optimizer_build_s": 1.505958,
+      "dataloader_build_s": 5.437076,
+      "post_training_label_to_exit_fsync_s": 20.678231,
+      "training_label_to_done_s": 116.874682,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ],
+      "direct_tp_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ]
+    },
+    {
+      "cycle": 5,
+      "case": "pp4-tp2-cpt",
+      "arm": "host-only",
+      "e2e_s": 245.78917927481234,
+      "iteration_log_sum_s": 103.7788,
+      "save_timer_max_s": 99.71583,
+      "other_envelope_s": 42.294549274812354,
+      "pack_max_rank_s": 3.3423318788409233,
+      "pack_rank_range_s": [
+        2.4642449636012316,
+        3.3423318788409233
+      ],
+      "write_fsync_max_rank_s": 95.93287134729326,
+      "write_fsync_rank_range_s": [
+        83.93026623874903,
+        95.93287134729326
+      ],
+      "checkpoint_bytes": 60453028872,
+      "pretrain_max_rank_s": 211.6507795136422,
+      "source": "performance-05-host-only\\pp4-tp2-cpt\\packed-control",
+      "startup_to_inprocess_s": 20.198809,
+      "distributed_init_s": 5.829818,
+      "model_optimizer_build_s": 1.735484,
+      "dataloader_build_s": 1.684729,
+      "post_training_label_to_exit_fsync_s": 14.325031,
+      "training_label_to_done_s": 201.90868,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "direct_tp_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cycle": 5,
+      "case": "pp4-tp2-lora",
+      "arm": "host-only",
+      "e2e_s": 154.02834392897785,
+      "iteration_log_sum_s": 101.5707,
+      "save_timer_max_s": 14.29836,
+      "other_envelope_s": 38.15928392897784,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 14.278284458443522,
+      "write_fsync_rank_range_s": [
+        11.470730852335691,
+        14.278284458443522
+      ],
+      "checkpoint_bytes": 8952891470,
+      "pretrain_max_rank_s": 127.41278380900621,
+      "source": "performance-05-host-only\\pp4-tp2-lora\\training-control",
+      "startup_to_inprocess_s": 13.244485,
+      "distributed_init_s": 4.668935,
+      "model_optimizer_build_s": 1.468536,
+      "dataloader_build_s": 5.391756,
+      "post_training_label_to_exit_fsync_s": 14.030515,
+      "training_label_to_done_s": 115.115875,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ],
+      "direct_tp_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ]
+    },
+    {
+      "cycle": 6,
+      "case": "pp4-tp2-cpt",
+      "arm": "baseline",
+      "e2e_s": 276.654208175838,
+      "iteration_log_sum_s": 114.6382,
+      "save_timer_max_s": 117.13962,
+      "other_envelope_s": 44.87638817583802,
+      "pack_max_rank_s": 29.87647514976561,
+      "pack_rank_range_s": [
+        21.07896201685071,
+        29.87647514976561
+      ],
+      "write_fsync_max_rank_s": 90.17875627428293,
+      "write_fsync_rank_range_s": [
+        74.05822060443461,
+        90.17875627428293
+      ],
+      "checkpoint_bytes": 60453051016,
+      "pretrain_max_rank_s": 239.9063810799271,
+      "source": "performance-06-baseline\\pp4-tp2-cpt\\adapted-reference-control",
+      "startup_to_inprocess_s": 14.085544,
+      "distributed_init_s": 4.968741,
+      "model_optimizer_build_s": 1.544525,
+      "dataloader_build_s": 1.861213,
+      "post_training_label_to_exit_fsync_s": 23.130843,
+      "training_label_to_done_s": 230.95986
+    },
+    {
+      "cycle": 6,
+      "case": "pp4-tp2-lora",
+      "arm": "baseline",
+      "e2e_s": 170.1164668686688,
+      "iteration_log_sum_s": 113.3241,
+      "save_timer_max_s": 14.213709999999999,
+      "other_envelope_s": 42.578656868668794,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 14.18804121389985,
+      "write_fsync_rank_range_s": [
+        9.845436966046691,
+        14.18804121389985
+      ],
+      "checkpoint_bytes": 8952913742,
+      "pretrain_max_rank_s": 137.35644754581153,
+      "source": "performance-06-baseline\\pp4-tp2-lora\\adapted-reference-control",
+      "startup_to_inprocess_s": 13.536965,
+      "distributed_init_s": 2.806613,
+      "model_optimizer_build_s": 1.60461,
+      "dataloader_build_s": 5.180069,
+      "post_training_label_to_exit_fsync_s": 20.674765,
+      "training_label_to_done_s": 126.210501
+    },
+    {
+      "cycle": 6,
+      "case": "pp4-tp2-cpt",
+      "arm": "current",
+      "e2e_s": 243.1243509426713,
+      "iteration_log_sum_s": 101.3801,
+      "save_timer_max_s": 99.718,
+      "other_envelope_s": 42.0262509426713,
+      "pack_max_rank_s": 3.6749575827270746,
+      "pack_rank_range_s": [
+        2.399011740460992,
+        3.6749575827270746
+      ],
+      "write_fsync_max_rank_s": 95.645527780056,
+      "write_fsync_rank_range_s": [
+        71.12048592045903,
+        95.645527780056
+      ],
+      "checkpoint_bytes": 60453028872,
+      "pretrain_max_rank_s": 208.22197367995977,
+      "source": "performance-06-current\\pp4-tp2-cpt\\packed-control",
+      "startup_to_inprocess_s": 14.261518,
+      "distributed_init_s": 4.475044,
+      "model_optimizer_build_s": 1.451434,
+      "dataloader_build_s": 1.584285,
+      "post_training_label_to_exit_fsync_s": 20.847511,
+      "training_label_to_done_s": 200.399143,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "direct_tp_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cycle": 6,
+      "case": "pp4-tp2-lora",
+      "arm": "current",
+      "e2e_s": 159.50550665147603,
+      "iteration_log_sum_s": 102.66629999999999,
+      "save_timer_max_s": 14.2633,
+      "other_envelope_s": 42.57590665147603,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 14.237982524558902,
+      "write_fsync_rank_range_s": [
+        10.769735611975193,
+        14.237982524558902
+      ],
+      "checkpoint_bytes": 8952891470,
+      "pretrain_max_rank_s": 127.04577257111669,
+      "source": "performance-06-current\\pp4-tp2-lora\\training-control",
+      "startup_to_inprocess_s": 12.616003,
+      "distributed_init_s": 2.901779,
+      "model_optimizer_build_s": 1.695423,
+      "dataloader_build_s": 5.549737,
+      "post_training_label_to_exit_fsync_s": 20.634228,
+      "training_label_to_done_s": 116.004332,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ],
+      "direct_tp_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ]
+    },
+    {
+      "cycle": 6,
+      "case": "pp4-tp2-cpt",
+      "arm": "host-only",
+      "e2e_s": 232.27469670400023,
+      "iteration_log_sum_s": 101.5093,
+      "save_timer_max_s": 98.1466,
+      "other_envelope_s": 32.61879670400023,
+      "pack_max_rank_s": 3.735338592901826,
+      "pack_rank_range_s": [
+        2.3790225200355053,
+        3.735338592901826
+      ],
+      "write_fsync_max_rank_s": 94.23190482333302,
+      "write_fsync_rank_range_s": [
+        80.81963614933193,
+        94.23190482333302
+      ],
+      "checkpoint_bytes": 60453028872,
+      "pretrain_max_rank_s": 205.91855197027326,
+      "source": "performance-06-host-only\\pp4-tp2-cpt\\packed-control",
+      "startup_to_inprocess_s": 12.583756,
+      "distributed_init_s": 3.462086,
+      "model_optimizer_build_s": 1.449885,
+      "dataloader_build_s": 1.599649,
+      "post_training_label_to_exit_fsync_s": 14.245246,
+      "training_label_to_done_s": 198.828726,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "direct_tp_calls_per_step": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "cycle": 6,
+      "case": "pp4-tp2-lora",
+      "arm": "host-only",
+      "e2e_s": 150.83541212789714,
+      "iteration_log_sum_s": 100.6711,
+      "save_timer_max_s": 14.52416,
+      "other_envelope_s": 35.640152127897146,
+      "pack_max_rank_s": 0,
+      "pack_rank_range_s": [
+        0,
+        0
+      ],
+      "write_fsync_max_rank_s": 14.49373983591795,
+      "write_fsync_rank_range_s": [
+        6.832967486232519,
+        14.49373983591795
+      ],
+      "checkpoint_bytes": 8952891470,
+      "pretrain_max_rank_s": 125.00063343904912,
+      "source": "performance-06-host-only\\pp4-tp2-lora\\training-control",
+      "startup_to_inprocess_s": 13.319192,
+      "distributed_init_s": 2.895249,
+      "model_optimizer_build_s": 1.488661,
+      "dataloader_build_s": 5.491151,
+      "post_training_label_to_exit_fsync_s": 13.160001,
+      "training_label_to_done_s": 114.375271,
+      "swiglu_module_counts": [
+        16,
+        16,
+        15,
+        15,
+        15,
+        15,
+        16,
+        16
+      ],
+      "lora_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ],
+      "direct_tp_calls_per_step": [
+        1024.0,
+        1024.0,
+        960.0,
+        960.0,
+        960.0,
+        960.0,
+        1024.0,
+        1024.0
+      ]
+    }
+  ],
+  "decomposition_limit": "Iteration/save are host log envelopes, nested rank sub-times cannot be added as device critical path."
+}

@@ -1,0 +1,13 @@
+{
+  "gpu_hours": 64,
+  "gpus": 8,
+  "no_automatic_extension": true,
+  "allowed_until": "2026-11-16T19:50:00+08:00",
+  "hard_stop": "2026-11-16T19:55:00+08:00",
+  "platform_end": "2026-11-16T20:00:00+08:00",
+  "platform_end_source": "User confirmed20.00 and supplied SSH32752",
+  "pod_started": "2026-11-16T14:35:38+08:00",
+  "window_id": "20261116-143538",
+  "cash_constraint": "0yuan only;user-provisioned;no platform extension submitted",
+  "scope": "Finish TP4PP2 both tasks first,then TP8;this window shorter than full8hour plan;seal complete pairs and stop at cutoff;no automatic extension"
+}

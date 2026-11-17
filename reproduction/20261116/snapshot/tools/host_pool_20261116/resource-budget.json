@@ -1,0 +1,12 @@
+{
+  "gpu_hours": 32,
+  "gpus": 8,
+  "no_automatic_extension": true,
+  "allowed_until": "2026-11-16T13:20:00+08:00",
+  "hard_stop": "2026-11-16T13:25:00+08:00",
+  "platform_end": "2026-11-16T13:30:00+08:00",
+  "platform_end_source": "User confirmed13.30 in chat",
+  "pod_started": "2026-11-16T09:36:19+08:00",
+  "cash_constraint": "0yuan only; no platform extension submitted",
+  "second_stage_budget": "Not allocated; stable eligibility only"
+}

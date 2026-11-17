@@ -1,0 +1,16 @@
+{
+  "stage1": {
+    "archive": "stage1.tar.gz",
+    "sha256": "ddf448095f973d1fa4049db54f6d9f9da022d9bc4e4e030d75ba7c6bf634b08f",
+    "bytes": 9378579,
+    "files": 3136,
+    "redacted_or_rebased_files": 3
+  },
+  "stage2": {
+    "archive": "stage2.tar.gz",
+    "sha256": "0b4d179fdca63ee0317b5133cf1967004fdd638cb7eaab3d8ef730fb987d2938",
+    "bytes": 40498428,
+    "files": 4630,
+    "redacted_or_rebased_files": 7
+  }
+}

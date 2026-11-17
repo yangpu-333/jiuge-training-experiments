@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "declared_date": "2026-10-31",
+  "scope": "Engineering numerical screen for the pinned RMSNorm backend switch, not quality or end-to-end performance acceptance",
+  "model": "4b",
+  "tasks": [
+    "cpt",
+    "lora"
+  ],
+  "parallel": {
+    "dp": 1,
+    "tp": 2,
+    "pp": 2
+  },
+  "bf16": true,
+  "seq_length": 512,
+  "micro_batch_size": 1,
+  "global_batch_size": 16,
+  "train_iters": 10,
+  "seed": 1234,
+  "recompute": false,
+  "exact_controls": [
+    "initial model and optimizer master tensor bytes",
+    "actual microbatch tensors",
+    "RNG before and after every step",
+    "consumed sample counts",
+    "no skipped updates",
+    "frozen LoRA base unchanged"
+  ],
+  "loss": {
+    "atol": 0.001,
+    "rtol": 0.001,
+    "steps": "all 10"
+  },
+  "gradient_norm": {
+    "rtol": 0.01,
+    "atol": 1e-12,
+    "steps": "all 10"
+  },
+  "full_gradients": {
+    "steps": [
+      1,
+      10
+    ],
+    "position": "after reduction and prepare_grads, before clipping",
+    "global_relative_l2_max": 0.01,
+    "global_cosine_min": 0.9999,
+    "material_tensor_relative_l2_max": 0.05,
+    "material_tensor_cosine_min": 0.995,
+    "material_reference_norm_fraction_min": 1e-06,
+    "small_tensor_error_norm_fraction_max": 1e-06
+  },
+  "fp32_master_updates": {
+    "step": 10,
+    "definition": "final master minus identical initial master, including Adam and weight decay",
+    "global_relative_l2_max": 0.05,
+    "global_cosine_min": 0.995,
+    "per_tensor_metrics": "diagnostic; no per-tensor pass threshold"
+  },
+  "model_parameters": "All final checkpoint model tensors compared in full; finite required. Error metrics diagnostic because unchanged pretrained weights can hide update error.",
+  "metric_definition": "All elements, no sampling; CPU FP64 sums. relL2=norm(candidate-reference)/norm(reference), cosine uses both norms. Zero reference requires exact zero for global vector; small tensor handling is stated above.",
+  "rationale": "Loss and gradient thresholds screen accumulated BF16 error across 62 layers. Separate update gate avoids a misleading comparison dominated by pretrained weights. These thresholds are fixed before execution and do not reuse standalone RMSNorm allclose tolerances.",
+  "failure_policy": "Retain failed evidence, identify failed metrics, do not relax thresholds after observing results. Any repair is a separately versioned candidate."
+}
